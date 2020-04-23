@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//css
+import './App.css'
+//route components
+import HomePage from './components/Homepage/index'
+import Login from './components/login/login'
+import AvailableVehicales from './components/Booking/vehicales/showallvehicles'
+import SpecificVehicaleDetails from './components/Booking/vehicaleShowPage/vehicaleShowPage'
+import VehicaleBookingPage from './components/Booking/bookingForm/finalBF'
+//main layout
+import MainLayout from './components/common/MainLayout'
+//react router dom
+import { BrowserRouter as Router , Route , Switch , Redirect } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="body">
+     <Router>
+     <MainLayout>
+     <Switch>
+       <Redirect exact from="/" to="/home"/>
+         <Route exact path="/login" component={Login} />
+       </Switch>
+       <Switch>
+         <Route exact path="/home" component={HomePage} />
+       </Switch>
+       <Switch>
+         <Route exact path="/availablevehicales" component={AvailableVehicales} />
+       </Switch>
+       <Switch>
+         <Route exact path="/vehicale" component={SpecificVehicaleDetails} />
+       </Switch>
+       <Switch>
+         <Route exact path="/bookingform" component={VehicaleBookingPage} />
+       </Switch>
+       </MainLayout>
+     </Router>
+      </div>
   );
 }
 
