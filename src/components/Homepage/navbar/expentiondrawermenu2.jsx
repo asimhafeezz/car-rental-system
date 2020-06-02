@@ -42,15 +42,15 @@ export default function ControlledExpansionPanels() {
     <div className="homepage-navbar-expentiondrawermenu-css">
       <div
         className={(classes.root, "pr-3 pl-3 pt-3 pb-3")}
-        style={{ backgroundColor: "#202021" }}
+        style={{ backgroundColor: "white" }}
       >
         <ExpansionPanel
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
-          style={{ backgroundColor: "#202021", color: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         >
           <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
             aria-controls="panel1bh-content"
             id="panel1bh-header"
           >
@@ -93,10 +93,10 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
-          style={{ backgroundColor: "#202021", color: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         >
           <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
             aria-controls="panel2bh-content"
             id="panel2bh-header"
           >
@@ -122,10 +122,10 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
-          style={{ backgroundColor: "#202021", color: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         >
           <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
             aria-controls="panel3bh-content"
             id="panel3bh-header"
           >
@@ -151,10 +151,10 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel4"}
           onChange={handleChange("panel4")}
-          style={{ backgroundColor: "#202021", color: "white" }}
+          style={{ backgroundColor: "white", color: "black" }}
         >
           <ExpansionPanelSummary
-            expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+            expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
             aria-controls="panel4bh-content"
             id="panel4bh-header"
           >
@@ -188,18 +188,18 @@ export default function ControlledExpansionPanels() {
         >
           <section
             className="text-white small"
-            style={{ alignSelf: "flex-end" }}
+            style={{ alignSelf: "flex-end" , display:'flex' }}
           >
-            <MailIcon style={{ margin: "1rem", color: "white" }} />
-            support@safar.com
+            <MailIcon style={{ margin: "1rem", color: "black" }} />
+            <h6 style={{color: "black" , alignSelf:'center'}}>support@safar.com</h6>
           </section>
 
           <section
             className="text-white small"
-            style={{ alignSelf: "flex-end" }}
+            style={{ alignSelf: "flex-end" , display:'flex' }}
           >
-            <PhoneIcon style={{ margin: "1rem", color: "white" }} />
-            0348-12345678
+            <PhoneIcon style={{ margin: "1rem", color: "black" }} />
+            <h6 style={{color: "black" , alignSelf:'center'}}>0348-12345678</h6>
           </section>
         </div>
       </div>

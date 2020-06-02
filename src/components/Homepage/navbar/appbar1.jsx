@@ -39,7 +39,7 @@ const AppbarComp = (props) => {
     
     <div className={classes.root , "homepage-navbar-css"}>
 
-      <AppBar position="static" style={{backgroundColor:'black'}}>
+      <AppBar position="static" style={{backgroundColor:'white'}}>
         <Toolbar style={{display:'grid' , gridTemplateColumns:"1.1fr 9fr 9fr"}}>
           <div className="marginmenu"  edge="start"  color="inherit" aria-label="menu">
           <Drawer />

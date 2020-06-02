@@ -27,7 +27,6 @@
   
   .homepage-navbar-expentiondrawermenu-css .allAtag li a {
     text-decoration: none;
-    color: white;
   }
   
   .homepage-navbar-expentiondrawermenu-css .allAtag li {
@@ -381,8 +380,8 @@
     position: relative;
     display: inline-block; /* Make the width of box same as image */
     overflow: hidden;
-    height: 630px;
-    margin: 3%;
+    /* height: 530px; */
+    /* margin: 3%; */
   }
   .homepage-driverimage-css .driverbox .drivertext {
     position: absolute;
@@ -460,7 +459,7 @@
     height: 630px;
     overflow: hidden;
     margin-bottom: 0%;
-    margin: 3%;
+    /* margin: 3%; */
   }
   .homepage-investorimage-css .investorbox .investortext {
     position: absolute;
@@ -600,12 +599,12 @@
   }
   
   .homepage-navbarfooter-css .bgcolor{
-    background-color: black;
+    background-color: rgb(243, 243, 243);
   }
   
   .homepage-navbarfooter-css .bgcolor > a{
     text-decoration: none;
-    color: white;
+    /* color: white; */
   }
   
   .homepage-navbarfooter-css .paddingstyle{
@@ -1056,41 +1055,40 @@ padding: .7rem;
 /* All Images Text */
 
 .HomepageAllImagesText .imageTexts{
-  text-align: center;
-  width: 50%;
-  margin-left: 25%;
-  color: white;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 2rem;
 }
-.HomepageAllImagesText .imageTexts h2 {
+/* .HomepageAllImagesText .imageTexts h2 {
 font-size: 320%;
 }
 
 .HomepageAllImagesText .imageTexts p {
   font-size: 120%
-}
+} */
 
 @media only screen and (max-width: 800px){
-.HomepageAllImagesText .imageTexts{
-      width: 70%;
-      margin-left: 17%;
-  }
+/* .HomepageAllImagesText .imageTexts{
+      width: 70%; 
+      margin-left: 17%; 
+  } */
 }
 
 @media only screen and (max-width:680px){
-.HomepageAllImagesText .imageTexts p{
-  display:none;
-}  
+/* .HomepageAllImagesText .imageTexts p{
+  /* display:none; */
+/* }   
 .HomepageAllImagesText .imageTexts{
       width: 70%;
       margin-left: 17%;
-  }
-  .HomepageAllImagesText .imageTexts h2 {
+  } */
+  /* .HomepageAllImagesText .imageTexts h2 {
       font-size: 230%;
     }
 
     .HomepageAllImagesText .imageTexts p {
         font-size: 100%
-      }
+      } */
 }
 
 
@@ -1103,9 +1101,11 @@ font-size: 320%;
 	overflow-x: scroll;
   white-space: nowrap;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 .productViewPage .imgView .HorizontalSlider .flex-container::-webkit-scrollbar{
     display: none;
+    /* scroll-behavior: smooth; */
 }
 
 .productViewPage .imgView .HorizontalSlider .flex-container #move{
@@ -1129,22 +1129,24 @@ font-size: 320%;
 .productViewPage .imgView .HorizontalSlider .mainDealsbox {
 	display: inline-block;
   border: 1.2px solid black;
-  border-radius: .4rem;
+  border-radius: .2rem;
 	margin: 0 2.3rem;
 	height: 155px;
     width: 340px;
     transition: all 0.4s ease;
+    box-shadow:  10px 10px 19px #bababa
 }
 
 .productViewPage .imgView .HorizontalSlider .mainVehicalebox {
 	display: inline-block;
   border: 1.2px solid black;
-  border-radius: .4rem;
+  border-radius: .2rem;
 	margin: 0 4.4rem;
 	height: 260px;
     width: 260px;
     transition: all 0.4s ease;
     cursor: pointer;
+    box-shadow:  10px 10px 19px #bababa
 }
 
 .productViewPage .imgView .HorizontalSlider .mainVehicalebox:hover{

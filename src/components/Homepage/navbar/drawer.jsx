@@ -37,7 +37,7 @@ export default function TemporaryDrawer() {
       role="presentation"
       onKeyDown={toggleDrawer(side, false)}
     >
-      <div style={{ backgroundColor: "#202021" }}>
+      <div style={{ backgroundColor: "white" }}>
         <div style={{ display: "flex" }}>
         <div style={{
           marginTop:'.5rem',
@@ -47,7 +47,7 @@ export default function TemporaryDrawer() {
           <IconButton
             aria-label="close"
               onClick={toggleDrawer("top", false)}
-              style={{outline:'none'}}
+              style={{outline:'none' , color:'black'}}
           >
             <CloseIcon />
           </IconButton>
@@ -64,7 +64,7 @@ export default function TemporaryDrawer() {
 
   function Checkingwidth() {
     return (
-      <IconButton onClick={toggleDrawer("top", true)} style={{outline:'none'}}>
+      <IconButton onClick={toggleDrawer("top", true)} style={{outline:'none' , color:'black'}}>
       <MenuIcon
       />
       </IconButton>
@@ -75,6 +75,7 @@ export default function TemporaryDrawer() {
     <div>
       <Checkingwidth />
       <Drawer
+        style={{backgroundColor:'white'}}
         anchor="top"
         open={state.top}
         onClose={toggleDrawer("top", false)}

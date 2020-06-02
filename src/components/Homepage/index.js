@@ -2,8 +2,8 @@ import React from 'react'
 //components of Homepage
 import FrontImage from './imagesDisplay/image'
 import LocationImage from './imagesDisplay/locations'
-import DriverImage from './imagesDisplay/driverImage'
-import InvestorImage from './imagesDisplay/investorImage'
+import DriverImage from './imagesDisplay/driverImage/index'
+import InvestorImage from './imagesDisplay/investorImage/index'
 import AllImagesText from './ImagesText/allImagesText'
 import NavbarFooter1 from './navbarFooter/navbarFooter'
 import Cards from './cards/offerCards'
@@ -31,13 +31,9 @@ export default () => {
             <FrontImage />
             <Deals />
             <Vehicales />
-            <Cards />
-            <AllImagesText title={text.LocationTitle} para={text.LocationText} />
-            <LocationImage />
-            <AllImagesText title={text.DriverTitle} para={text.DriverText} />
             <DriverImage />
-            <AllImagesText title={text.InvestorTitle} para={text.InvestorText} />
             <InvestorImage />
+            <LocationImage />
             <NavbarFooter1 />
         </>
     )

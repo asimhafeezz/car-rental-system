@@ -8,7 +8,7 @@ const LoginButton = (props) => {
 
     return (
         <div>
-            <Button onClick={props.loginUser}>LOGIN</Button>
+            <Button style={{color:'black'}} onClick={props.loginUser}>LOGIN</Button>
         </div>
     )
 }

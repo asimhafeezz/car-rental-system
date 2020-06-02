@@ -77,7 +77,7 @@ const MenuAppBar = (props) => {
                 onClick={handleMenu}
           style={{ outline: 'none' }}
         >
-          <div style={{ display: 'flex', justifyContent:'center' , cursor:'pointer' }}>
+          <div style={{ display: 'flex', justifyContent:'center' , cursor:'pointer' , color:'black' }}>
                       <ExpandMoreOutlinedIcon style={{ marginTop: '.3rem' }} />
                       <AccountCircleIcon style={{marginTop: '.1rem' , fontSize:'1.8rem' }} />
             </div>
@@ -97,9 +97,9 @@ const MenuAppBar = (props) => {
                 open={open}
                 onClose={handleClose2}
               >{props.spinner}
-                <MenuItem  style={{padding:'.5rem 1rem'}} onClick={handleCloseProfile}><PersonOutlineIcon style={{marginRight:'.7rem'}} />My Account</MenuItem>
+                <MenuItem  style={{padding:'.5rem 1rem' , color:'black'}} onClick={handleCloseProfile}><PersonOutlineIcon style={{marginRight:'.7rem'}} />My Account</MenuItem>
           <MenuItem onClick={handleCloseLogOut} style={{ padding: '.5rem 1rem' }}>
-          {props.spinner && <CircularProgress style={{color:'white' , marginRight:'.7rem'}} size='1.2rem' />}
+          {props.spinner && <CircularProgress style={{marginRight:'.7rem' , color:'black'}} size='1.2rem' />}
                       <ExitToAppIcon style={{marginRight:'.7rem'}} />Logout
                       </MenuItem>
               </Menu>
