@@ -16,11 +16,11 @@ function App() {
   return (
     <div className="body">
      <Router>
-     <MainLayout>
      <Switch>
        <Redirect exact from="/" to="/home"/>
          <Route exact path="/login" component={Login} />
        </Switch>
+     <MainLayout>
        <Switch>
          <Route exact path="/home" component={HomePage} />
        </Switch>

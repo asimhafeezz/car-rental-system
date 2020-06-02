@@ -8,6 +8,10 @@ import AllImagesText from './ImagesText/allImagesText'
 import NavbarFooter1 from './navbarFooter/navbarFooter'
 import Cards from './cards/offerCards'
 import Bookingbar from '../Booking/bookingbarr'
+
+import Deals from './cards/deals'
+import Vehicales from './cards/vehicales'
+
 export default () => {
 
     let text = {
@@ -25,6 +29,8 @@ export default () => {
         <>
             <Bookingbar />
             <FrontImage />
+            <Deals />
+            <Vehicales />
             <Cards />
             <AllImagesText title={text.LocationTitle} para={text.LocationText} />
             <LocationImage />

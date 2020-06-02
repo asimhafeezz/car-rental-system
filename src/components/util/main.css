@@ -1042,7 +1042,7 @@ padding: .7rem;
 }
 
 .mainBookingLayout .layoutbar .active{
-  border-bottom: 4px solid rgb(66, 66, 192);
+  border-bottom: 4px solid rgb(55, 55, 173);
   color: rgb(66, 66, 192);
   font-weight: bold;
   transition: step-start;
@@ -1092,3 +1092,65 @@ font-size: 320%;
         font-size: 100%
       }
 }
+
+
+
+
+
+/* productViewPage imgView horizontal Slider CSS Script */
+
+.productViewPage .imgView .HorizontalSlider .flex-container {
+	overflow-x: scroll;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.productViewPage .imgView .HorizontalSlider .flex-container::-webkit-scrollbar{
+    display: none;
+}
+
+.productViewPage .imgView .HorizontalSlider .flex-container #move{
+  transition: 0.7s ease;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox .imageVehicalebox {
+	display: inline-block;
+	height: 260px;
+    width: 260px;
+    transition: all 0.7s ease;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox .imageDealbox {
+	display: inline-block;
+	height: 155px;
+    width: 340px;
+    transition: all 0.7s ease;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox {
+	display: inline-block;
+  border: 1.2px solid black;
+  border-radius: .4rem;
+	margin: 0 2.3rem;
+	height: 155px;
+    width: 340px;
+    transition: all 0.4s ease;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox {
+	display: inline-block;
+  border: 1.2px solid black;
+  border-radius: .4rem;
+	margin: 0 4.4rem;
+	height: 260px;
+    width: 260px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox:hover{
+  box-shadow:  10px 10px 19px #bababa
+} 
+
+/* .productViewPage .imgView .HorizontalSlider .mainDealsbox:hover{
+  box-shadow:  10px 10px 19px #bababa
+} */
