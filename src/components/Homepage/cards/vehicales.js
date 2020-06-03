@@ -38,7 +38,7 @@ export default () => {
         <div className="productViewPage p-4 mt-4">
             <section style={{display:'grid' , gridTemplateColumns:'1fr 1fr'}}>
             
-                <h4 style={{display:'flex' , fontSize:'1.4rem' , fontWeight:'bold'}}>DON'T DREAM IT DRIVE IT!</h4>
+                <h4 style={{display:'flex' , fontSize:'1.2rem' , fontWeight:'bold'}}>DON'T DREAM IT DRIVE IT!</h4>
             
             <div style={{display:'flex' , justifyContent:'flex-end'}}>
                 <arrowButtons style={arrowButtonStyle} onClick={moveVehicaleLeft}><ChevronLeftIcon /></arrowButtons>

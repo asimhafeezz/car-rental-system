@@ -4,7 +4,7 @@ import {Button} from '@material-ui/core'
 export default () => {
 
     let text = {
-        InvestorTitle: 'Be a Investor',
+        InvestorTitle: 'Be an Investor',
         InvestorText: 'Make great money by driving on schedule & make as much as you can on monthly basis. Only drives when it works for you. There is no office & no boss because you’re in charge with our service.',
         }
 
