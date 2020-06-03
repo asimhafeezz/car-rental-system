@@ -14,6 +14,7 @@
 
 .homepage-navbar-css .imgclass {
     justify-self: start;
+    /* transition: all 0.5s ease; */
  }
   
   @media only screen and (max-width: 600px) {
@@ -27,6 +28,8 @@
   
   .homepage-navbar-expentiondrawermenu-css .allAtag li a {
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.1s ease;
   }
   
   .homepage-navbar-expentiondrawermenu-css .allAtag li {
@@ -34,7 +37,8 @@
   }
   
   .homepage-navbar-expentiondrawermenu-css .allAtag li a:hover {
-    color: rgb(38, 166, 216);
+    color: rgb(36, 99, 194);
+    font-weight: bold;
   }
   
   
@@ -76,12 +80,12 @@
   
   .homepage-first-image .box .text {
     position: absolute;
-    left: 0;
+    left: 10%;
     right: 0;
     top: 20%; /* Adjust this value to move the positioned div up and down */
-    text-align: center;
+    text-align: left;
     width: 100%; /* Set the width of the positioned div */
-    color: aliceblue;
+    color: rgb(29, 30, 31);
     font-size: larger;
   }
   
@@ -1129,13 +1133,13 @@ font-size: 320%;
 
 .productViewPage .imgView .HorizontalSlider .mainDealsbox {
 	display: inline-block;
-  border: 1.2px solid black;
+  /* border: 1.2px solid black; */
   border-radius: .2rem;
 	margin: 0 2.3rem;
 	height: 155px;
     width: 340px;
     transition: all 0.4s ease;
-    box-shadow:  10px 10px 19px #bababa
+    
 }
 
 .productViewPage .imgView .HorizontalSlider .mainVehicalebox {
@@ -1147,7 +1151,7 @@ font-size: 320%;
     width: 260px;
     transition: all 0.4s ease;
     cursor: pointer;
-    box-shadow:  10px 10px 19px #bababa
+    
 }
 
 .productViewPage .imgView .HorizontalSlider .mainVehicalebox:hover{

@@ -13,6 +13,9 @@ import PhoneIcon from "@material-ui/icons/Phone";
 // import globalStateContext from '../../GlobalState/context'
 // import {UtilContext} from '../../GlobalState/contexts/utilContext'
 
+//redux
+import {useSelector} from 'react-redux'
+
 import "../../util/main.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +41,9 @@ export default function ControlledExpansionPanels() {
     setExpanded(isExpanded ? panel : false);
   };
 
+  //redux selector
+  const isAuth = useSelector(state => state.auth.isAuthenticated)
+
   return (
     <div className="homepage-navbar-expentiondrawermenu-css">
       <div
@@ -58,35 +64,35 @@ export default function ControlledExpansionPanels() {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <ul className="allAtag" style={{ listStyleType: "none" }}>
-              {/* {
-                store.user.isAuthenticated === true ? */}
-              <div>
-                <li>
-                  <a>My Account</a>
-                </li>
-                <li>
-                  <a>Reservations</a>
-                </li>
-                <li>
-                  <a>Driver Panel</a>
-                </li>
-                <li>
-                  <a>Investor Panel</a>
-                </li>
-              </div>
-              {/* : */}
-              <div>
-                <li>
-                  <a>Log In or Register</a>
-                </li>
-                <li>
-                  <a>Be a Driver</a>
-                </li>
-                <li>
-                  <a>Be an Investor</a>
-                </li>
-              </div>
-              {/* } */}
+              {
+                isAuth === true ?
+                  <div>
+                    <li>
+                      <a>My Account</a>
+                    </li>
+                    <li>
+                      <a>Reservations</a>
+                    </li>
+                    <li>
+                      <a>Driver Panel</a>
+                    </li>
+                    <li>
+                      <a>Investor Panel</a>
+                    </li>
+                  </div>
+                  :
+                  <div>
+                    <li>
+                      <a>Log In or Register</a>
+                    </li>
+                    <li>
+                      <a>Be a Driver</a>
+                    </li>
+                    <li>
+                      <a>Be an Investor</a>
+                    </li>
+                  </div>
+              }
             </ul>
           </ExpansionPanelDetails>
         </ExpansionPanel>

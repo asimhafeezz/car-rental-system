@@ -10,7 +10,7 @@ export default () => {
 
     return (
         <div className="container-fluid row mt-4 mb-4">
-            <section className=" col-sm-12 col-md-6"><img  className="img-fluid" src="/vehicaleImagesStatic/drivercar.jpg" alt="Driver Image" /></section>
+            <section className=" col-sm-12 col-md-6"><img  className="img-fluid" src="/vehicaleImagesStatic/driverImage.jpg" alt="Driver Image" /></section>
             <section className="col-sm-12 col-md-6" style={{margin:'auto'}}><DriverImageText title={text.DriverTitle} para={text.DriverText} /><Button className='rounded-0' size="large" variant="contained" color="primary" >Become a Captain</Button></section>
         </div>
     )

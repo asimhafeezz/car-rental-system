@@ -8,19 +8,19 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 let imgDataSet = [
-    {id:'1' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'2' , imgPath:'/logo1.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'2' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'3' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'4' , imgPath:'/logo1.png'   , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/logo512.png' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'2' , imgPath:'/vehicaleImagesStatic/cars.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'2' , imgPath:'/vehicaleImagesStatic/jeep.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'3' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'4' , imgPath:'/vehicaleImagesStatic/cars.jpg'   , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
 ]
 
 //css
@@ -61,8 +61,8 @@ export default () => {
                     imgDataSet.map(item => {
                         return (<section className="mainDealsbox">
                             <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <h6 style={{textAlign:'center'}}>{item.title}</h6>
-                            <p style={{textAlign:'center'}}>{item.desc}</p>
+                            <h6 style={{textAlign:'left' , marginTop:'.5rem'}}>{item.title}</h6>
+                            <p style={{textAlign:'left'}}>{item.desc}</p>
                             </section>)
                     })
                 }
