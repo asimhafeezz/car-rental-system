@@ -69,9 +69,9 @@
   
   .homepage-first-image .box {
     position: relative;
-    height: 91vh;
+    height: 73.4vh;
     overflow: hidden;
-    margin-left: 0px;
+    margin: 0px;
   }
   
   .homepage-first-image .box .text {
@@ -82,6 +82,7 @@
     text-align: center;
     width: 100%; /* Set the width of the positioned div */
     color: aliceblue;
+    font-size: larger;
   }
   
   .homepage-first-image .box .text h1 {
@@ -303,7 +304,7 @@
   .homepage-locationimage-css .boxx {
     position: relative;
     display: inline-block; /* Make the width of box same as image */
-    margin: 3%;
+    /* margin: 3%; */
   }
   .homepage-locationimage-css .boxx .textt {
     position: absolute;
@@ -599,7 +600,7 @@
   }
   
   .homepage-navbarfooter-css .bgcolor{
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(221, 217, 217);
   }
   
   .homepage-navbarfooter-css .bgcolor > a{

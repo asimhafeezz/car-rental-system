@@ -8,8 +8,6 @@ import Drawer from './drawer'
 import LoginButton from './loginButon'
 import { connect } from 'react-redux'
 
-import '../../util/main.css'
-
 
 
 import BarComponent from './barComponent'
@@ -37,14 +35,14 @@ const AppbarComp = (props) => {
   return (
     <div>
     
-    <div className={classes.root , "homepage-navbar-css"}>
+    <div className={classes.root}>
 
       <AppBar position="static" style={{backgroundColor:'white'}}>
         <Toolbar style={{display:'grid' , gridTemplateColumns:"1.1fr 9fr 9fr"}}>
-          <div className="marginmenu"  edge="start"  color="inherit" aria-label="menu">
+          <div  edge="start"  color="inherit" aria-label="menu">
           <Drawer />
           </div>
-          <div className="mr-5 imgclass"   color="inherit">
+          <div className="mr-5"   color="inherit">
             
        <Logo />
 
@@ -63,19 +61,6 @@ const AppbarComp = (props) => {
         </Toolbar>
       </AppBar>
       </div>
-{/* <style jsx>
-  {`
-  .marginmenu{
-    margin-left: .4rem;
-  }
-  @media (max-width:768px){
-    .marginmenu{
-      margin-left:0px;
-    }
-  }
-  `}
-</style> */}
-
     </div>
   );
 }

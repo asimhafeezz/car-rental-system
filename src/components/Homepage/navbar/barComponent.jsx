@@ -83,6 +83,7 @@ const MenuAppBar = (props) => {
             </div>
               </div>
               <Menu
+              
                 id="menu-appbar"
                 anchorEl={anchorEl}
                 anchorOrigin={{
@@ -98,9 +99,9 @@ const MenuAppBar = (props) => {
                 onClose={handleClose2}
               >{props.spinner}
                 <MenuItem  style={{padding:'.5rem 1rem' , color:'black'}} onClick={handleCloseProfile}><PersonOutlineIcon style={{marginRight:'.7rem'}} />My Account</MenuItem>
-          <MenuItem onClick={handleCloseLogOut} style={{ padding: '.5rem 1rem' }}>
+          <MenuItem onClick={handleCloseLogOut} style={{ padding: '.5rem 1rem' , color:'black' }}>
           {props.spinner && <CircularProgress style={{marginRight:'.7rem' , color:'black'}} size='1.2rem' />}
-                      <ExitToAppIcon style={{marginRight:'.7rem'}} />Logout
+                      <ExitToAppIcon style={{marginRight:'.7rem' , color:'black'}} />Logout
                       </MenuItem>
               </Menu>
             </div>
