@@ -4,7 +4,7 @@ import './App.css'
 //route components
 import HomePage from './components/Homepage/index'
 import Login from './components/login/login'
-import AvailableVehicales from './components/Booking/vehicales/showallvehicles'
+import AvailableVehicales from './components/Booking/vehicales/vehicales'
 import SpecificVehicaleDetails from './components/Booking/vehicaleShowPage/vehicaleShowPage'
 import VehicaleBookingPage from './components/Booking/bookingForm/finalBF'
 //main layout

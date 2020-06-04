@@ -52,9 +52,9 @@ export default function TemporaryDrawer() {
             <CloseIcon />
           </IconButton>
           </div>
-          
+          <div style={{marginTop:'1rem'}}>
           <Logo />
-
+          </div>
         </div>
 
         <ExpentionpanelDrawerMenu2 />

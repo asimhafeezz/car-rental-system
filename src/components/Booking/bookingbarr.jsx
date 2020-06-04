@@ -63,6 +63,7 @@ export default function MaterialUIPickers() {
       <div className="bookingPage-bookingbar-css">
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <div className="container-fluid">
+          <form onSubmit={()=>console.log("pick update",pickUptime)}>
             <div
               className="row"
               style={{ backgroundColor: "#202020", padding: "2.5%" }}
@@ -129,8 +130,10 @@ export default function MaterialUIPickers() {
               <div
                 className="col-md-1 col-sm-12 col-xs-12 p-1"
                 style={{ alignSelf: "flex-end" }}
-              ><Link to="/availablevehicales">
+                >
+                  <Link to="/availablevehicales">
                 <Button
+                  type="submit"
                   className="rounded-0"
                   size="large"
                   variant="contained"
@@ -147,6 +150,7 @@ export default function MaterialUIPickers() {
                 </Link>
               </div>
             </div>
+            </form>
           </div>
         </MuiPickersUtilsProvider>
       </div>

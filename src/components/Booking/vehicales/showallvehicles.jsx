@@ -43,7 +43,7 @@ export default function Showallvehicles({handlenextstep} ) {
             {vehicaledata.map(vitems => {
               return (
                 <div className="col-md-4 col-lg-3 mb-4 col-xs-12 shadow-lg">
-                  <Link to="/vehicale"><a onClick={handlenextstep} style={{cursor:'pointer' , color:'blue'}} >
+                  <Link to="/vehicale"><a style={{cursor:'pointer' , color:'blue'}} >
                     <div className="card mx-auto text-center">
                       <img
                         className="card-img-top"

@@ -312,12 +312,14 @@
   }
   .homepage-locationimage-css .boxx .textt {
     position: absolute;
-    left: 40px;
+    left: 0px;
     right: 0;
-    top: 10%; /* Adjust this value to move the positioned div up and down */
-    text-align: left;
-    width: 90%; /* Set the width of the positioned div */
-    color: white;
+    top: 30%; /* Adjust this value to move the positioned div up and down */
+    text-align: right;
+    width: 100%; /* Set the width of the positioned div */
+    color: rgb(29, 30, 31);
+    font-weight: bold;
+    padding: 0 5.2rem;
   }
   
   .homepage-locationimage-css .locationsbtn {
@@ -366,7 +368,7 @@
       font-size: 110%;
     }
     .homepage-locationimage-css .boxx .textt {
-      left: 1%;
+      left: 0%;
     }
     .homepage-locationimage-css .locationsbtn {
       margin-left: 47%;
@@ -1146,7 +1148,7 @@ font-size: 320%;
 	display: inline-block;
   border: 1.2px solid black;
   border-radius: .2rem;
-	margin: 0 4.4rem;
+	margin: 0 4.7rem;
 	height: 260px;
     width: 260px;
     transition: all 0.4s ease;
@@ -1161,3 +1163,15 @@ font-size: 320%;
 /* .productViewPage .imgView .HorizontalSlider .mainDealsbox:hover{
   box-shadow:  10px 10px 19px #bababa
 } */
+
+/* show all vehicales */
+.onHoverVehicaleEffectDiv{
+  transition: transform .2s ease
+}
+.onHoverVehicaleEffectDiv:hover{
+  /* transition: all 2s ease; */
+  transform: translate(-7px,-7px);
+  color: rgb(36, 99, 194);
+  /* border: 2px solid rgb(36, 99, 194); */
+  /* box-shadow:  10px 10px 19px #bababa; */
+} 

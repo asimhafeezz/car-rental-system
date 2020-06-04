@@ -6,7 +6,7 @@ export default () => (
     <img
       src="/logo1.png"
       alt="logo"
-      style={{ height: "4rem", width: "6rem" }}
+      style={{ height: "2rem", width: "6rem" }}
     />
   </a>
   
