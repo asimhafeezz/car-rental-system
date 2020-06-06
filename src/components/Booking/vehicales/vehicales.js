@@ -4,19 +4,28 @@ import { Link } from 'react-router-dom'
 import MainBookingLayout from '../mainBookingLayout'
 import CheckIcon from '@material-ui/icons/Check';
 
+//redux
+import useUtilActions from '../../../actions/utilActions'
+
 import '../../util/main.css'
 
-export default function Showallvehicles({handlenextstep} ) {
+export default function Showallvehicles() {
+
+    let { setBookingStepValue } = useUtilActions()
+    
+    React.useEffect(() => {
+        setBookingStepValue("bookingStep1")
+    },[])
     
   const [vehicaledata , setvehicaledata] = React.useState([
     {key:'1' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
-    {key:'2' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
+    {key:'2' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/cars.jpg" , valt:"jeep pic"},
     {key:'3' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
+    {key:'' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
     {key:'5' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'6' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
+    {key:'6' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
     {key:'7' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'8' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
+    {key:'8' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
     {key:'9' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
     {key:'10' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
     {key:'11' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
@@ -42,7 +51,7 @@ export default function Showallvehicles({handlenextstep} ) {
           >
             AVAILABLE VEHICALES
           </h3>
-          <div style={{ display: "flex",  flexWrap:'wrap' , justifyContent:'center'}}>
+          <div style={{ display: "flex",  flexWrap:'wrap' , justifyContent:'center'}} data-aos="fade-up" data-aos-duration="1500">
             {vehicaledata.map(vitems => {
               return (
                 <div style={{ display: "flex",  flexWrap:'wrap' , margin:'2rem'}} className="onHoverVehicaleEffectDiv">
@@ -50,7 +59,7 @@ export default function Showallvehicles({handlenextstep} ) {
                     <div style={{border:'0' , backgroundColor:'transparent'}}>
                     <h5 style={{padding:'.3rem' , backgroundColor:'#565957' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname}</h5>
                       <img
-                      style={{height:'11rem' , width:'14rem'}}
+                      style={{height:'14rem' , width:'17rem'}}
                       className="onHoverVehicaleEffectImage"
                         src={vitems.vpic}
                         alt={vitems.valt}

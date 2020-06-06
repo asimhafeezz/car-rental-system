@@ -5,21 +5,24 @@ import {
     Button
 } from '@material-ui/core'
 
+//redux
+import {useSelector} from 'react-redux'
+
 import '../util/main.css'
 
 export default ({ children }) => {
 
     const location = useLocation()
 
-
+    let bookingStepValue = useSelector(state => state.util.bookingStepValue)
 
 
     return(
     <div className="mainBookingLayout">
         <div className="layoutbar">
-        <Button className={`firstItem ${location.pathname === '/availablevehicales'? `active` :''}`} disabled><a>1. SELECT VEHICALE</a></Button>
-        <Button className={`secondItem ${location.pathname === '/vehicale'? `active` :''}`} disabled><a>2. VEHICALE DETAILS</a></Button>
-        <Button className={`secondItem ${location.pathname === '/bookingform'? `active` :''}`} disabled><a>3. BOOKING FORM</a></Button>
+        <Button className={`firstItem ${bookingStepValue === 'bookingStep1'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep1'? `digit` :'nondigit'}`}>1</span><span className={`${bookingStepValue === 'bookingStep1'? `active` :'nonactive'}`}>SELECT VEHICALE</span></Button>
+        <Button className={`secondItem ${bookingStepValue === 'bookingStep2'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep2'? `digit` :'nondigit'}`}>2</span><span className={`${bookingStepValue === 'bookingStep2'? `active` :'nonactive'}`}>VEHICALE DETAILS</span></Button>
+        <Button className={`secondItem ${bookingStepValue === 'bookingStep3'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep3'? `digit` :'nondigit'}`}>3</span><span className={`${bookingStepValue === 'bookingStep3'? `active` :'nonactive'}`}>BOOKING FORM</span></Button>
         </div>
 
         {children}

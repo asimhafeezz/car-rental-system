@@ -11,10 +11,18 @@ import ErrorText from "../../util/errorText";
 
 import TableDetails from "./tabledetails";
 
+//redux
+import useUtilActions from '../../../actions/utilActions'
 
 import MainBookingLayout from '../mainBookingLayout'
 
 export default () => {
+
+  let { setBookingStepValue } = useUtilActions()
+    
+    React.useEffect(() => {
+        setBookingStepValue("bookingStep3")
+    },[])
 
   const defaultValues = {
     // firstName: store.user.firstName,

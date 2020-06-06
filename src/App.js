@@ -1,6 +1,8 @@
 import React from 'react';
 //css
 import './App.css'
+//aos
+import AOS from 'aos';
 //route components
 import HomePage from './components/Homepage/index'
 import Login from './components/login/login'
@@ -13,6 +15,11 @@ import MainLayout from './components/common/MainLayout'
 import { BrowserRouter as Router , Route , Switch , Redirect } from 'react-router-dom'
 
 function App() {
+
+  React.useEffect(() => {
+    AOS.refresh();
+  }, [])
+  
   return (
     <div className="body">
      <Router>

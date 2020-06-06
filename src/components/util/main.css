@@ -73,7 +73,7 @@
   
   .homepage-first-image .box {
     position: relative;
-    height: 73.4vh;
+    height: 84vh;
     overflow: hidden;
     margin: 0px;
   }
@@ -1029,6 +1029,8 @@ padding: .7rem;
   background-color: #202021;
   color: white;
   padding-bottom: .5rem;
+  justify-content: center;
+
 }
 
 .mainBookingLayout .layoutbar .firstItem{
@@ -1048,10 +1050,33 @@ padding: .7rem;
 }
 
 .mainBookingLayout .layoutbar .active{
-  border-bottom: 4px solid rgb(55, 55, 173);
+  /* border-bottom: 4px solid rgb(55, 55, 173); */
   color: rgb(66, 66, 192);
   font-weight: bold;
   transition: step-start;
+}
+
+.mainBookingLayout .layoutbar .nonactive{
+  /* border-bottom: 4px solid rgb(55, 55, 173); */
+  color: white;
+  font-weight: bold;
+  transition: step-start;
+}
+
+.mainBookingLayout .layoutbar .digit{
+  background-color: rgb(66, 66, 192);
+  padding: 2px 10px;
+  border-radius: 45px;
+  margin-right: .3rem;
+  color: white
+}
+
+.mainBookingLayout .layoutbar .nondigit{
+  /* background-color: rgb(66, 66, 192); */
+  padding: 2px 10px;
+  border-radius: 45px;
+  margin-right: .3rem;
+  color: white
 }
 
 
@@ -1175,3 +1200,4 @@ font-size: 320%;
   /* border: 2px solid rgb(36, 99, 194); */
   /* box-shadow:  10px 10px 19px #bababa; */
 } 
+

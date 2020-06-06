@@ -4,12 +4,22 @@ import VehicaleIcon from "./vechicaleIcon";
 import VehicaleOptions from "./vehicaleOptions";
 import VehicaleOffers from "./vehicaleOffers";
 
+//redux
+import useUtilActions from '../../../actions/utilActions'
+
 import '../../util/main.css'
 
 import MainBookingLayout from '../mainBookingLayout'
 
 
 export default () => {
+
+  let { setBookingStepValue } = useUtilActions()
+    
+    React.useEffect(() => {
+        setBookingStepValue("bookingStep2")
+    },[])
+
   return (
     <MainBookingLayout>
     <div className="vehicaleShowPage-component-css">
