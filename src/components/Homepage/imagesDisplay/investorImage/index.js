@@ -9,7 +9,7 @@ export default () => {
         }
 
     return (
-        <div className="container-fluid row mt-5 pb-3" style={{paddingRight:'0px'}}>
+        <div className="container-fluid row mt-5 mb-5" style={{paddingRight:'0px'}}>
             <section className="col-sm-12 col-md-6" style={{ margin: 'auto' }}><InvestorImageText title={text.InvestorTitle} para={text.InvestorText} /><Button className='rounded-0' size="large" variant="contained" color="primary" style={{color:'#eeeeee'}} >Become a Host</Button></section>
             <section className=" col-sm-12 col-md-6"><img className="img-fluid" src="/vehicaleImagesStatic/investorImage.jpg" alt="Driver Image" /></section>
         </div>
