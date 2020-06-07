@@ -33,7 +33,7 @@ export default function Showallvehicles() {
   ])
     
   let style = {
-    backgroundColor: "",
+    backgroundColor: "#fd7014",
     paddingBottom: "2%",
     paddingTop: "2%"
 }
@@ -57,14 +57,14 @@ export default function Showallvehicles() {
                 <div style={{ display: "flex",  flexWrap:'wrap' , margin:'2rem'}} className="onHoverVehicaleEffectDiv">
                   <Link to="/vehicale" style={{textDecoration:'none' , color:'black'}}>
                     <div style={{border:'0' , backgroundColor:'transparent'}}>
-                    <h5 style={{padding:'.3rem' , backgroundColor:'#565957' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname}</h5>
+                    <h5 style={{padding:'.3rem' , backgroundColor:'#202021' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname}</h5>
                       <img
                       style={{height:'14rem' , width:'17rem'}}
                       className="onHoverVehicaleEffectImage"
                         src={vitems.vpic}
                         alt={vitems.valt}
                       />
-                      <div style={{backgroundColor:'#565957' , padding:'.4rem .1rem' , color:'white'}}>
+                      <div style={{backgroundColor:'#202021' , padding:'.4rem .1rem' , color:'white'}}>
                         <p style={{marginTop:'rem'}}><CheckIcon className="mr-2 pb-1" />incl. unlimited miles</p>
                         <h6 style={{fontSize:'1.2rem' , margin:'0 .3rem' , letterSpacing:'rem'}}>{vitems.price}</h6>
                       </div>

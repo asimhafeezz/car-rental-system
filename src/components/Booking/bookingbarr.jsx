@@ -131,7 +131,7 @@ export default function MaterialUIPickers() {
                 className="col-md-1 col-sm-12 col-xs-12 p-1"
                 style={{ alignSelf: "flex-end" }}
                 >
-                  <Link to="/availablevehicales">
+                  <Link to="/availablevehicales" style={{textDecoration:'none'}}>
                 <Button
                   type="submit"
                   className="rounded-0"
@@ -142,7 +142,8 @@ export default function MaterialUIPickers() {
                   style={{
                     padding: ".5rem 1rem .5rem 1rem",
                     textAlign: "center",
-                    borderRadius: "0px"
+                    borderRadius: "0px",
+                    color: '#eeeeee'
                   }}
                 >
                  OFFERS

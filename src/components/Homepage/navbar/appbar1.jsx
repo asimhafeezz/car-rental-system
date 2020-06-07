@@ -37,7 +37,7 @@ const AppbarComp = (props) => {
     
     <div className={classes.root}>
 
-      <AppBar position="static" style={{backgroundColor:'white'}}>
+      <AppBar position="static" style={{backgroundColor:'#eeeeee'}}>
         <Toolbar style={{display:'grid' , gridTemplateColumns:"1.1fr 9fr 9fr"}}>
           <div  edge="start"  color="inherit" aria-label="menu">
           <Drawer />

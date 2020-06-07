@@ -29,10 +29,14 @@ export default () => {
         <>
             <Bookingbar />
             <FrontImage />
+            <section style={{backgroundColor:'#fd7014'}}>
             <Deals />
             <Vehicales />
+            </section>
+            <section style={{backgroundColor:'#202021'}}>
             <DriverImage />
             <InvestorImage />
+            </section>
             <LocationImage />
             <NavbarFooter1 />
         </>

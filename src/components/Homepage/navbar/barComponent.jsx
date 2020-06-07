@@ -23,14 +23,26 @@ import { loggedOutUser } from '../../../actions/authActions'
 import { setSpinnerOn , setSpinnerOff } from '../../../actions/toggleActions'
 // import { setSpinnerOn } from '../../../actions/toggleActions'
 
+//Mui dark theme
+import {
+  ThemeProvider,
+  createMuiTheme
+} from "@material-ui/core";
+
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       '& > * + *': {
         marginTop: theme.spacing(2),
-      },
     },
-  }));
+    },
+}));
+  
+const theme = createMuiTheme({
+  palette: {
+    type: "light"
+  }
+});
 
 const MenuAppBar = (props) => {
 
@@ -68,6 +80,7 @@ const MenuAppBar = (props) => {
   }
 
   return (
+    <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <div>
               <div
@@ -97,15 +110,17 @@ const MenuAppBar = (props) => {
                 }}
                 open={open}
                 onClose={handleClose2}
+                // style={{backgroundColor:'#eeeeee'}}
               >{props.spinner}
                 <MenuItem  style={{padding:'.5rem 1rem' , color:'black'}} onClick={handleCloseProfile}><PersonOutlineIcon style={{marginRight:'.7rem'}} />My Account</MenuItem>
           <MenuItem onClick={handleCloseLogOut} style={{ padding: '.5rem 1rem' , color:'black' }}>
-          {props.spinner && <CircularProgress style={{marginRight:'.7rem' , color:'black'}} size='1.2rem' />}
+          {props.spinner && <CircularProgress style={{marginRight:'.7rem' , color:'#fd7014'}} size='1.2rem' />}
                       <ExitToAppIcon style={{marginRight:'.7rem' , color:'black'}} />Logout
                       </MenuItem>
               </Menu>
             </div>
-    </div>
+      </div>
+      </ThemeProvider>
   );
 }
 

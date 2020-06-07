@@ -8,7 +8,7 @@ const LoginButton = (props) => {
 
     return (
         <div>
-            <Button style={{color:'black' , outline:'none'}} onClick={props.loginUser}>LOGIN<AccountCircleOutlinedIcon style={{fontSize:'2rem' , marginLeft:'.5rem'}} /></Button>
+            <Button style={{color:'black' , outline:'none'}} className="onLoginButtonHover" onClick={props.loginUser}>LOGIN<AccountCircleOutlinedIcon style={{fontSize:'2rem' , marginLeft:'.5rem'}} /></Button>
         </div>
     )
 }

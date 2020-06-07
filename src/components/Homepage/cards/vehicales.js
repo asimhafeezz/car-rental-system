@@ -49,14 +49,22 @@ export default () => {
         <div className="HorizontalSlider p-4" style={{display:'flex'}}>
             
             <div className="flex-container" id="moveVehicale">
-                {
-                    imgDataSet.map(item => {
-                        return (<section className="mainVehicalebox">
-                        <img id={item.id} src={item.imgPath} className="imageVehicalebox" />
-                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.title}</h5>
-                        </section>)
-                    })
-                }
+                
+                    <section className="mainVehicalebox">
+                        <img src='/vehicaleImagesStatic/carpng1.png' className="imageVehicalebox" />
+                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Cars</h5>
+                        </section>
+
+                        <section className="mainVehicalebox">
+                        <img src='/vehicaleImagesStatic/pickuppng2.png' className="imageVehicalebox" />
+                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Pickups</h5>
+                        </section>
+
+                        <section className="mainVehicalebox">
+                        <img src='/vehicaleImagesStatic/jeeppng3.png' className="imageVehicalebox" />
+                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Jeeps</h5>
+                        </section>
+                
                 </div>
                 </div>
                 

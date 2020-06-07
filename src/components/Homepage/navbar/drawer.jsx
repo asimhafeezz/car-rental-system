@@ -37,7 +37,7 @@ export default function TemporaryDrawer() {
       role="presentation"
       onKeyDown={toggleDrawer(side, false)}
     >
-      <div style={{ backgroundColor: "white" }}>
+      <div style={{ backgroundColor: "#eeeeee" }}>
         <div style={{ display: "flex" }}>
         <div style={{
           marginTop:'.5rem',
@@ -75,7 +75,7 @@ export default function TemporaryDrawer() {
     <div>
       <Checkingwidth />
       <Drawer
-        style={{backgroundColor:'white'}}
+        style={{backgroundColor:'#eeeeee'}}
         anchor="top"
         open={state.top}
         onClose={toggleDrawer("top", false)}

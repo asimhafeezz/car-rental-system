@@ -48,12 +48,12 @@ export default function ControlledExpansionPanels() {
     <div className="homepage-navbar-expentiondrawermenu-css">
       <div
         className={(classes.root, "pr-3 pl-3 pt-3 pb-3")}
-        style={{ backgroundColor: "white" }}
+        style={{ backgroundColor: "#eeeeee" }}
       >
         <ExpansionPanel
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
-          style={{ backgroundColor: "white", color: "black" }}
+          style={{ backgroundColor: "#eeeeee", color: "black" }}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
@@ -99,7 +99,7 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
-          style={{ backgroundColor: "white", color: "black" }}
+          style={{ backgroundColor: "#eeeeee", color: "black" }}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
@@ -128,7 +128,7 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
-          style={{ backgroundColor: "white", color: "black" }}
+          style={{ backgroundColor: "#eeeeee", color: "black" }}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
@@ -157,7 +157,7 @@ export default function ControlledExpansionPanels() {
         <ExpansionPanel
           expanded={expanded === "panel4"}
           onChange={handleChange("panel4")}
-          style={{ backgroundColor: "white", color: "black" }}
+          style={{ backgroundColor: "#eeeeee", color: "black" }}
         >
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon style={{ color: "black" }} />}
@@ -184,7 +184,7 @@ export default function ControlledExpansionPanels() {
           </ExpansionPanelDetails>
         </ExpansionPanel>
 
-        {/* <hr style={{backgroundColor:'white' }}/> */}
+        {/* <hr style={{backgroundColor:'#eeeeee' }}/> */}
         <div
           style={{
             display: "flex",
@@ -193,7 +193,7 @@ export default function ControlledExpansionPanels() {
           }}
         >
           <section
-            className="text-white small"
+            className="text-#eeeeee small"
             style={{ alignSelf: "flex-end" , display:'flex' }}
           >
             <MailIcon style={{ margin: "1rem", color: "black" }} />
@@ -201,7 +201,7 @@ export default function ControlledExpansionPanels() {
           </section>
 
           <section
-            className="text-white small"
+            className="text-#eeeeee small"
             style={{ alignSelf: "flex-end" , display:'flex' }}
           >
             <PhoneIcon style={{ margin: "1rem", color: "black" }} />

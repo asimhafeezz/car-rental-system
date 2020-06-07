@@ -43,7 +43,7 @@ export default () => {
         document.getElementById('move').scrollLeft -= 350;
     }
     return (
-        <div className="productViewPage p-4 mt-4">
+        <div className="productViewPage p-4 pt-5">
             <section style={{display:'grid' , gridTemplateColumns:'1fr 1fr'}}>
             
                 <h4 style={{display:'flex' , fontSize:'1.2rem' , fontWeight:'bold'}}>BEST DEALS:</h4>
@@ -61,8 +61,9 @@ export default () => {
                     imgDataSet.map(item => {
                         return (<section className="mainDealsbox">
                             <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <h6 style={{textAlign:'left' , marginTop:'.5rem'}}>{item.title}</h6>
-                            <p style={{textAlign:'left'}}>{item.desc}</p>
+                            <section style={{display:'flex' , marginTop:'.3rem'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'.5rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
+                            <p style={{ textAlign: 'left' }}>{item.desc}</p>
+                            </div></section>
                             </section>)
                     })
                 }
