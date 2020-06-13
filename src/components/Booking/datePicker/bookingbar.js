@@ -64,7 +64,7 @@ export default function MaterialUIPickers() {
 
   return (
     <div>
-      <div className="bookingPage-bookingbar-css">
+      <div className="bookingPage-bookingbar-css mt-2">
           <div className="container-fluid">
           <form onSubmit={()=>console.log("pick update",pickUptime)}>
             <div
