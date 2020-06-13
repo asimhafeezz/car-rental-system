@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+# /src/components/Booking/datepicker
+
 # production
 /build
 

@@ -7,6 +7,7 @@ import AOS from 'aos';
 import HomePage from './components/Homepage/index'
 import Login from './components/login/login'
 import AvailableVehicales from './components/Booking/vehicales/vehicales'
+import ProductCar from './components/vehicaleView/vehicales'
 import SpecificVehicaleDetails from './components/Booking/productViewPage/index'
 import VehicaleBookingPage from './components/Booking/bookingForm/finalBF'
 //main layout
@@ -33,6 +34,9 @@ function App() {
        </Switch>
        <Switch>
          <Route exact path="/availablevehicales" component={AvailableVehicales} />
+       </Switch>
+       <Switch>
+         <Route exact path="/productcar/:productid" component={ProductCar} />
        </Switch>
        <Switch>
          <Route exact path="/vehicale" component={SpecificVehicaleDetails} />

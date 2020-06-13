@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 //css
 import '../../util/main.css'
 //material ui
@@ -6,6 +6,11 @@ import { IconButton } from '@material-ui/core'
 //icons
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+
+import {Link} from 'react-router-dom'
+
+//productServiceItem
+import useProductService from '../../../services/productServices/productService'
 
 let imgDataSet = [
     {id:'1' , imgPath:'/logo512.png' , title:'Cars'},
@@ -26,6 +31,19 @@ let arrowButtonStyle = {
 }
 
 export default () => {
+    const [data, setdata] = useState([])
+    const [vehicaleImage, setvehicaleImage] = useState('')
+
+    const { advancedSearch } = useProductService()
+
+    React.useEffect(() => {
+        const search = {application_ID:150}
+        advancedSearch(search).then(resdata => {
+          console.log(resdata)
+          setdata(resdata)
+        //   console.log("data" , data)
+        })
+      },[])
 
     let moveVehicaleRight = () => {
         document.getElementById('moveVehicale').scrollLeft += 350;
@@ -49,22 +67,37 @@ export default () => {
         <div className="HorizontalSlider p-4" style={{display:'flex'}}>
             
             <div className="flex-container" id="moveVehicale">
-                
-                    <section className="mainVehicalebox">
-                        <img src='/vehicaleImagesStatic/carpng1.png' className="imageVehicalebox" />
-                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Cars</h5>
-                        </section>
-
-                        <section className="mainVehicalebox">
-                        <img src='/vehicaleImagesStatic/pickuppng2.png' className="imageVehicalebox" />
-                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Pickups</h5>
-                        </section>
-
-                        <section className="mainVehicalebox">
-                        <img src='/vehicaleImagesStatic/jeeppng3.png' className="imageVehicalebox" />
-                        <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>Jeeps</h5>
-                        </section>
-                
+                    {
+                            data.map(item => {
+                            return (<Link to={`/productcar/${item.product_ID}`} style={{textDecoration:'none' , color:'#eeeeee'}}>
+                                {item.product_NAME === "Car" ?
+                                    <section className="mainVehicalebox" key={item.product_ID}>
+                                    <img src='/vehicaleImagesStatic/carpng1.png' className="imageVehicalebox" />
+                                    <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
+                                    </section> : ""}
+                                    {item.product_NAME === "Jeep" ?
+                                    <section className="mainVehicalebox" key={item.product_ID}>
+                                    <img src='/vehicaleImagesStatic/jeeppng3.png' className="imageVehicalebox" />
+                                    <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
+                                    </section> : ""}
+                                    {/* {item.product_NAME === "Van" ?
+                                    <section className="mainVehicalebox" key={item.product_ID}>
+                                    <img src='/vehicaleImagesStatic/vanpng1.png' className="imageVehicalebox" />
+                                    <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
+                                    </section> : ""} */}
+                                    {item.product_NAME === "" ?
+                                    <section className="mainVehicalebox" key={item.product_ID}>
+                                    <img src='/vehicaleImagesStatic/pickupspng2.png' className="imageVehicalebox" />
+                                    <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
+                                    </section> : ""}
+                                
+                            {/* <section className="mainVehicalebox" key={item.product_ID}>
+                            <img src={vehicaleImage} className="imageVehicalebox" />
+                            <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
+                            </section> */}
+                            </Link>)
+                        })
+                    }
                 </div>
                 </div>
                 

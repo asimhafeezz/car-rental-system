@@ -8,7 +8,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 let imgDataSet = [
-    {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+    {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this iasdasdasdasdasdasdasdasdasdasdasdasdasds offer discription'},
     {id:'2' , imgPath:'/vehicaleImagesStatic/cars.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
     {id:'2' , imgPath:'/vehicaleImagesStatic/jeep.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
     {id:'3' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
@@ -61,8 +61,8 @@ export default () => {
                     imgDataSet.map(item => {
                         return (<section className="mainDealsbox">
                             <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <section style={{display:'flex' , marginTop:'.3rem'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'.5rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
-                            <p style={{ textAlign: 'left' }}>{item.desc}</p>
+                            <section style={{display:'flex' , paddingTop:'.3rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'.5rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
+                            <p style={{ textAlign: 'left' }}>{item.desc.length > 30 ? item.desc.slice(0,30).concat('...') : item.desc}</p>
                             </div></section>
                             </section>)
                     })

@@ -18,7 +18,7 @@ export default function Showallvehicles() {
     },[])
     
   const [vehicaledata , setvehicaledata] = React.useState([
-    {key:'1' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
+    {key:'1' , vname:"TOYOTA ssssssssssssssssssssYARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
     {key:'2' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/cars.jpg" , valt:"jeep pic"},
     {key:'3' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
     {key:'' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
@@ -28,7 +28,7 @@ export default function Showallvehicles() {
     {key:'8' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
     {key:'9' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
     {key:'10' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'11' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
+    {key:'11' , vname:"TOYOTA YARIS IA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
     {key:'12' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
   ])
     
@@ -37,7 +37,6 @@ export default function Showallvehicles() {
     paddingBottom: "2%",
     paddingTop: "2%"
 }
-
 
   return (
       <MainBookingLayout>
@@ -57,7 +56,7 @@ export default function Showallvehicles() {
                 <div style={{ display: "flex",  flexWrap:'wrap' , margin:'2rem'}} className="onHoverVehicaleEffectDiv">
                   <Link to="/vehicale" style={{textDecoration:'none' , color:'black'}}>
                     <div style={{border:'0' , backgroundColor:'transparent'}}>
-                    <h5 style={{padding:'.3rem' , backgroundColor:'#202021' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname}</h5>
+                    <div style={{width:'17rem'}}><h5 style={{padding:'.3rem' , backgroundColor:'#202021' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname.length > 17 ? vitems.vname.slice(0,19).concat('...') : vitems.vname}</h5></div>
                       <img
                       style={{height:'14rem' , width:'17rem'}}
                       className="onHoverVehicaleEffectImage"
