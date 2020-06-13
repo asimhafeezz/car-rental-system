@@ -8,7 +8,7 @@ import AllImagesText from './ImagesText/allImagesText'
 import NavbarFooter1 from './navbarFooter/navbarFooter'
 import Cards from './cards/offerCards'
 // import Bookingbar from '../Booking/bookingbarr'
-import Bookingbar from '../Booking/datePicker/picker'
+import Bookingbar from '../Booking/datePicker/bookingbar'
 
 import Deals from './cards/deals'
 import Vehicales from './cards/vehicales'
@@ -32,7 +32,7 @@ export default () => {
             <FrontImage />
             <section style={{backgroundColor:'#fd7014'}}>
             <Deals />
-            <Vehicales />
+            {/* <Vehicales /> */}
             </section>
             <section style={{backgroundColor:'#202021'}}>
             <DriverImage />

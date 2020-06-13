@@ -324,12 +324,12 @@
   
   .homepage-locationimage-css .locationsbtn {
     position: absolute;
-    left: 3%;
+    left: 0;
     right: 0;
-    top: 76%; /* Adjust this value to move the positioned div up and down */
+    top: 75%; /* Adjust this value to move the positioned div up and down */
     text-align: center; /* Set the width of the positioned div */
     color: aliceblue;
-    margin-left: 62%;
+    margin-left: 40%;
   }
   
   .homepage-locationimage-css .locationsbtn .btnclass2 {
@@ -339,7 +339,7 @@
   
   @media only screen and (max-width: 800px) {
     .homepage-locationimage-css .locationsbtn {
-      top: 66%;
+      top: 76%;
     }
     .homepage-locationimage-css .boxx .textt h1 {
       font-size: 140%;
@@ -372,7 +372,7 @@
     }
     .homepage-locationimage-css .locationsbtn {
       margin-left: 47%;
-      top: 60%;
+      top: 76%;
     }
   
     .homepage-locationimage-css .locationsbtn .btnclass2 {

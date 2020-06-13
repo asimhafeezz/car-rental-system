@@ -16,7 +16,7 @@ export default () => {
       onChange={date => handleDateChange(date)}
       renderInput={(startProps, endProps) => (
         <>
-          <TextField variant="standard" {...startProps} />
+          <TextField variant="filled" {...startProps} />
           <DateRangeDelimiter>
           <MobileTimePicker
         renderInput={props => <TextField variant="outlined" {...props} />}
