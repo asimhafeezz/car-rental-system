@@ -1,5 +1,10 @@
-import React  from 'react'
+import React , {useEffect}  from 'react'
 import { Link } from 'react-router-dom'
+
+import { makeStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 import MainBookingLayout from '../mainBookingLayout'
 import CheckIcon from '@material-ui/icons/Check';
@@ -7,43 +12,120 @@ import CheckIcon from '@material-ui/icons/Check';
 //redux
 import useUtilActions from '../../../actions/utilActions'
 
+//product item service
+import useProductItemService from '../../../services/productServices/productItemService'
+import useProductService from '../../../services/productServices/productService'
+
+//filter
+import FilterVehicles from './filter2'
 import '../../util/main.css'
+
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  }
+}));
+
 
 export default function Showallvehicles() {
 
-    let { setBookingStepValue } = useUtilActions()
-    
-    React.useEffect(() => {
-        setBookingStepValue("bookingStep1")
-    },[])
-    
-  const [vehicaledata , setvehicaledata] = React.useState([
-    {key:'1' , vname:"TOYOTA ssssssssssssssssssssYARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
-    {key:'2' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/cars.jpg" , valt:"jeep pic"},
-    {key:'3' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
-    {key:'5' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'6' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
-    {key:'7' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'8' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep.jpg" , valt:"jeep pic"},
-    {key:'9' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'10' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'11' , vname:"TOYOTA YARIS IA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-    {key:'12' , vname:"TOYOTA YARIS IA" , price:"200Rs/- | day" , vpic:"/vehicaleImagesStatic/jeep3.jpg" , valt:"jeep pic"},
-  ])
-    
+  const classes = useStyles();
+  const [vehicle, setvehicle] = React.useState('');
+
+  const handleChange = (event) => {
+    setvehicle(event.target.value);
+  };
+
+  //css
   let style = {
     backgroundColor: "#fd7014",
     paddingBottom: "2%",
     paddingTop: "2%"
-}
+  }
+
+  const [vehicleTypeList , setvehicleTypeList] = React.useState([])
+
+    
+
+    let { setBookingStepValue } = useUtilActions()
+    
+  const [vehicaledata , setvehicaledata] = React.useState([])
+    
+  
+  //dynamic list product service
+  let { advancedsearch } = useProductService()
+  let { advancedSearch } = useProductItemService()
+
+  useEffect(() => {
+    setBookingStepValue("bookingStep1")
+    let search = {
+      application_ID: 150
+    }
+    //product item
+    advancedSearch(search).then(resData => {
+      setvehicaledata(resData)
+    })
+    //product
+    advancedsearch(search).then(resData => {
+      setvehicleTypeList(resData)
+    })
+  }, [])
+  
+  React.useEffect(() => {
+    if (vehicle === 'Car') {
+      let search = {
+        application_ID: 150,
+        product_ID: 1
+      }
+      //product item
+      advancedSearch(search).then(resData => {
+        setvehicaledata(resData)
+      })
+    }
+    else if (vehicle === 'all') {
+      let search = {
+        application_ID: 150
+      }
+      //product item
+      advancedSearch(search).then(resData => {
+        setvehicaledata(resData)
+      })
+    }
+},[vehicle])
 
   return (
       <MainBookingLayout>
+        
       <div
         className="vehicales"
         style={style}>
         <div>
+        <div style={{display:'flex' , borderBottom:'1px solid #202021' , padding:'0rem .5rem 1.2rem .5rem' , marginBottom:'1rem'}}>
+        <h6 style={{marginTop:'1rem' , marginRight:'1rem'}}>FILTER BY:</h6>
+      <FormControl className={classes.formControl}>
+        <Select
+          value={vehicle}
+          onChange={handleChange}
+          displayEmpty
+          className={classes.selectEmpty}
+          inputProps={{ 'aria-label': 'Without label' }}
+        >
+          <MenuItem style={{padding:'.5rem 1rem'}} value="" disabled>
+            Vehicle Type
+          </MenuItem>
+          <MenuItem style={{padding:'.5rem 1rem'}} value='all'>All Vehicles</MenuItem>
+          {
+            vehicleTypeList.map(item =>{
+              return <MenuItem style={{padding:'.5rem 1rem'}} key={item.product_ID} value={item.product_NAME}>{item.product_NAME}</MenuItem>
+            })
+          }
+        </Select>
+      </FormControl>
+    </div>
+          
+
           <h3
             className="pb-2"
             style={{ display: "flex", justifyContent: "center" , fontWeight:'bold'}}
@@ -56,7 +138,7 @@ export default function Showallvehicles() {
                 <div style={{ display: "flex",  flexWrap:'wrap' , margin:'2rem'}} className="onHoverVehicaleEffectDiv">
                   <Link to="/vehicale" style={{textDecoration:'none' , color:'black'}}>
                     <div style={{border:'0' , backgroundColor:'transparent'}}>
-                    <div style={{width:'17rem'}}><h5 style={{padding:'.3rem' , backgroundColor:'#202021' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.vname.length > 17 ? vitems.vname.slice(0,19).concat('...') : vitems.vname}</h5></div>
+                    <div style={{width:'17rem'}}><h5 style={{padding:'.3rem' , backgroundColor:'#202021' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' }}>{vitems.productitem_NAME.length > 15 ? vitems.productitem_NAME.slice(0,15).concat('...') : vitems.productitem_NAME}</h5></div>
                       <img
                       style={{height:'14rem' , width:'17rem'}}
                       className="onHoverVehicaleEffectImage"

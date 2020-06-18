@@ -87,7 +87,7 @@ export default () => {
         return apiCall(postData);
     }
     
-    const advancedSearch = (data) => {
+    const advancedsearch = (data) => {
         var postData = {
             service_NAME: setting.service_NAME,
             request_TYPE: "POST",
@@ -107,6 +107,6 @@ export default () => {
         return apiCall(postData);
     }
 
-    return {get , getAll , add, getOne , search , searchAll , advancedSearch , advancedSearchAll , Delete , update}
+    return {get , getAll , add, getOne , search , searchAll , advancedsearch , advancedSearchAll , Delete , update}
 
 }

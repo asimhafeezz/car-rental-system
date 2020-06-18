@@ -7,7 +7,7 @@ export const apiCall = (postData) => {
         baseURL: 'https://api.ulearncmis.co.uk:8443/SGW/service',
         method: 'POST',
         headers: {
-            'Authorization': `bearer 0d7cff5d-4b99-48b6-986d-688a273b06d4`
+            'Authorization': `bearer 9caed28b-e75f-41b7-9fd9-c14dbf147cf4`
         },
         data: postData
     })

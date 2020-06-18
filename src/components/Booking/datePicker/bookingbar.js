@@ -64,7 +64,7 @@ export default function MaterialUIPickers() {
 
   return (
     <div>
-      <div className="bookingPage-bookingbar-css mt-2">
+      <div className="bookingPage-bookingbar-css">
           <div className="container-fluid">
           <form onSubmit={()=>console.log("pick update",pickUptime)}>
             <div
@@ -147,15 +147,14 @@ export default function MaterialUIPickers() {
                   <Link to="/availablevehicales" style={{textDecoration:'none'}}>
                 <Button
                   type="submit"
-                  className="rounded-0"
+                  className=""
                   size="large"
                   variant="contained"
                   color="primary"
                   fullWidth
                   style={{
-                    padding: ".9rem 1rem .8rem 1rem",
+                    padding: ".9rem 1rem .9rem 1rem",
                     textAlign: "center",
-                    borderRadius: "0px",
                     color: '#eeeeee'
                   }}
                 >
