@@ -3,3 +3,1345 @@
   padding: 0;
   background-color: #202021;
 }
+
+/* main.css */
+
+
+
+
+
+
+
+/* Home Page Component */
+
+/* Homepage Upper Navbar CSS */
+
+/* upper navbar css */
+
+.homepage-navbar-css .imgclass {
+  justify-self: start;
+  /* transition: all 0.5s ease; */
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-navbar-css .imgclass {
+    justify-self: center;
+    padding-left: 0.4rem;
+  }
+}
+
+/* homepage-navbar-expentiondrawermenu-css */
+
+.homepage-navbar-expentiondrawermenu-css .allAtag li a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.homepage-navbar-expentiondrawermenu-css .allAtag li {
+  padding-top: 1rem;
+}
+
+.homepage-navbar-expentiondrawermenu-css .allAtag li a:hover {
+  color: #fd7014;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home Page Main Image CSS */
+
+.homepage-first-image .box {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homepage-first-image .box .text {
+  position: absolute;
+  left: 10%;
+  right: 0;
+  top: 13%; /* Adjust this value to move the positioned div up and down */
+  text-align: left;
+  width: 100%; /* Set the width of the positioned div */
+  color: #272121;
+  font-size: larger;
+}
+
+.homepage-first-image .box .text h1 {
+  font-weight: bolder;
+  font-size: 400%;
+}
+
+.homepage-first-image .butn {
+  position: absolute;
+  left: 0%;
+  right: 0;
+  top: 89%; /* Adjust this value to move the positioned div up and down */
+  text-align: center; /* Set the width of the positioned div */
+  color: aliceblue;
+}
+
+/* .bookingbar{
+   position: absolute;
+   background-color: rgb(255, 255, 255);
+   color: whitek;
+   top: 15%;
+   left: 30%;
+   width: 30%;
+   padding: 1% 2% 1% 2%;
+   opacity: 79%;
+   border-radius: 50px;
+} */
+
+@media only screen and (max-width: 1200px) {
+  .homepage-first-image .box .text h1 {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1085px) {
+  .homepage-first-image .box {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .homepage-first-image .box .text h1 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .homepage-first-image .box .text h1 {
+    top: 0%;
+    font-size: 300%;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .homepage-first-image .box .text h1 {
+    top: 0%;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .homepage-first-image .box .text h1 {
+    top: 0%;
+    font-size: 270%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .homepage-first-image .box .text h1 {
+    font-size: 200%;
+  }
+  .homepage-first-image .box .text {
+    top: 40%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* HomePage Offer Cards Images css */
+
+.homepage-offercards-css .flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .homepage-offercards-css .flex-container > div {
+    width: 46.6%;
+    margin: 5px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+  
+  .homepage-offercards-css .offerimg {
+    position: relative; /* Make the width of box same as image */
+    overflow: hidden;
+    flex: 1 1 300px;
+  }
+  
+  .homepage-offercards-css .headerstyle {
+    position: absolute;
+    justify-content: left;
+    top: 13%;
+    left: 10%;
+    color: aliceblue;
+  }
+  
+  .homepage-offercards-css .anchorstyle {
+    position: absolute;
+    justify-content: left;
+    top: 18%;
+    left: 10%;
+    font-size: 70%;
+    color: rgb(57, 94, 194);
+    font-weight: bold;
+  }
+  .homepage-offercards-css .anchorstyle:hover {
+    text-decoration: underline;
+  }
+  
+  .homepage-offercards-css .carimg {
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+    overflow: hidden;
+    flex: 1 1 300px;
+  
+  }
+  
+  .homepage-offercards-css .headerstyle2 {
+    position: absolute;
+    justify-content: left;
+    top: 13%;
+    left: 10%;
+    color: aliceblue;
+  }
+  
+  .homepage-offercards-css .anchorstyle2 {
+    position: absolute;
+    justify-content: left;
+    top: 18%;
+    left: 10%;
+    font-size: 65%;
+    color: rgb(57, 94, 194);
+    font-weight: bold;
+  }
+  .homepage-offercards-css .anchorstyle2:hover {
+    text-decoration: underline;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .homepage-offercards-css .headerstyle {
+      font-size: 65%;
+    }
+    .homepage-offercards-css .anchorstyle {
+      top: 12%;
+      font-size: 55%;
+    }
+  
+    .homepage-offercards-css .headerstyle2 {
+      font-size: 65%;
+    }
+    .homepage-offercards-css .anchorstyle2 {
+      top: 12%;
+      font-size: 55%;
+    }
+  }
+  
+  @media only screen and (max-width: 390px) {
+    .homepage-offercards-css .headerstyle {
+      left: 2%;
+      font-size: 48%;
+    }
+    .homepage-offercards-css .anchorstyle {
+      left: 2%;
+      top: 12%;
+      font-size: 30%;
+    }
+  
+    .homepage-offercards-css .headerstyle2 {
+      left: 2%;
+      font-size: 48%;
+    }
+    .homepage-offercards-css .anchorstyle2 {
+      left: 2%;
+      top: 12%;
+      font-size: 30%;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HomePage location Image CSS */
+
+.homepage-locationimage-css .boxx {
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
+  /* margin: 3%; */
+}
+.homepage-locationimage-css .boxx .textt {
+  position: absolute;
+  left: 0px;
+  right: 0;
+  top: 30%; /* Adjust this value to move the positioned div up and down */
+  text-align: right;
+  width: 100%; /* Set the width of the positioned div */
+  color: rgb(29, 30, 31);
+  font-weight: bold;
+  padding: 0 5.2rem;
+}
+
+.homepage-locationimage-css .locationsbtn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 75%; /* Adjust this value to move the positioned div up and down */
+  text-align: center; /* Set the width of the positioned div */
+  color: aliceblue;
+  margin-left: 40%;
+}
+
+.homepage-locationimage-css .locationsbtn .btnclass2 {
+  font-size: 120%;
+  width: 50%;
+}
+
+@media only screen and (max-width: 800px) {
+  .homepage-locationimage-css .locationsbtn {
+    top: 76%;
+  }
+  .homepage-locationimage-css .boxx .textt h1 {
+    font-size: 140%;
+  }
+  .homepage-locationimage-css .locationsbtn .btnclass2 {
+    width: 55%;
+    font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .homepage-locationimage-css .boxx .textt h1 {
+    font-size: 120%;
+  }
+  .homepage-locationimage-css .locationsbtn .btnclass2 {
+    width: 50%;
+    font-size: 80%;
+  }
+  .homepage-locationimage-css .boxx .textt {
+    left: 1%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homepage-locationimage-css .boxx .textt h1 {
+    font-size: 110%;
+  }
+  .homepage-locationimage-css .boxx .textt {
+    left: 0%;
+  }
+  .homepage-locationimage-css .locationsbtn {
+    margin-left: 47%;
+    top: 76%;
+  }
+
+  .homepage-locationimage-css .locationsbtn .btnclass2 {
+    width: 50%;
+    font-size: 70%;
+  }
+}
+
+/* HomePage driver Image CSS */
+
+.homepage-driverimage-css .driverbox {
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
+  overflow: hidden;
+  /* height: 530px; */
+  /* margin: 3%; */
+}
+.homepage-driverimage-css .driverbox .drivertext {
+  position: absolute;
+  left: 25%;
+  right: 0;
+  top: 25%; /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+  width: 50%; /* Set the width of the positioned div */
+  color: aliceblue;
+  padding: 2%;
+  font-size: 300%;
+}
+
+.homepage-driverimage-css .driverbox .drivertextp {
+  position: absolute;
+  left: 30%;
+  right: 0;
+  top: 55%; /* Adjust this value to move the positioned div up and down */
+  text-align: left;
+  width: 35%; /* Set the width of the positioned div */
+  color: aliceblue;
+  font-size: 180%;
+}
+
+.homepage-driverimage-css .driverbtn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* Adjust this value to move the positioned div up and down */
+  text-align: center; /* Set the width of the positioned div */
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 890px) {
+  .homepage-driverimage-css .driverbox {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .homepage-driverimage-css .driverbox .drivertext {
+    font-size: 230%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .homepage-driverimage-css .driverbox .drivertext {
+    font-size: 140%;
+  }
+}
+
+@media only screen and (max-width: 432px) {
+  .homepage-driverimage-css .driverbox .drivertext {
+    font-size: 120%;
+  }
+  .homepage-driverimage-css .driverbtn {
+    top: 60%;
+  }
+}
+
+@media only screen and (max-width: 282px) {
+  .homepage-driverimage-css .driverbox .drivertext {
+    font-size: 90%;
+  }
+  .homepage-driverimage-css .driverbtn {
+    top: 60%;
+  }
+}
+
+/* HomePage Invester image CSS */
+
+.homepage-investorimage-css .investorbox {
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
+  height: 630px;
+  overflow: hidden;
+  margin-bottom: 0%;
+  /* margin: 3%; */
+}
+.homepage-investorimage-css .investorbox .investortext {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7%; /* Adjust this value to move the positioned div up and down */
+  text-align: center;
+  width: 40%; /* Set the width of the positioned div */
+  color: aliceblue;
+  background-color: rgb(26, 24, 29);
+  margin-left: 2%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.homepage-investorimage-css .investorbtn {
+  position: absolute;
+  left: 2%;
+  right: 0;
+  top: 80%; /* Adjust this value to move the positioned div up and down */
+  text-align: left; /* Set the width of the positioned div */
+  color: aliceblue;
+  margin-bottom: 10%;
+}
+
+.homepage-investorimage-css .investorbtn .btnclasslg {
+  width: 20%;
+  font-size: 110%;
+  padding: 1.2%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .homepage-investorimage-css .investorbox {
+    height: auto;
+  }
+  .homepage-investorimage-css .investorbox .investortext {
+    width: 70%;
+  }
+  .homepage-investorimage-css .investorbtn .btnclasslg {
+    width: 25%;
+    font-size: 90%;
+    padding: 1.2%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .homepage-investorimage-css .investorbox .investortext h1 {
+    font-size: 130%;
+  }
+  .homepage-investorimage-css .investorbox .investortext {
+    width: 50%;
+  }
+  .homepage-investorimage-css .investorbtn {
+    top: 70%;
+  }
+  .homepage-investorimage-css .investorbtn .btnclasslg {
+    width: 35%;
+    font-size: 95%;
+    padding: 2%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .homepage-investorimage-css .investorbox .investortext h1 {
+    font-size: 100%;
+  }
+  .homepage-investorimage-css .investorbtn {
+    top: 62%;
+    width: 70%;
+    left: 1%;
+    font-size: 30%;
+  }
+  .homepage-investorimage-css .investorbtn .btnclasslg {
+    width: 35%;
+    font-size: 185%;
+    padding: 3%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .homepage-investorimage-css .investorbtn .btnclasslg {
+    width: 35%;
+    font-size: 180%;
+    padding: 3%;
+  }
+}
+
+
+
+
+
+/* HomePage Navbar Footer CSS */
+
+
+.homepage-navbarfooter-css ul{
+    list-style-type: none;
+}
+
+.homepage-navbarfooter-css .fa {
+    padding:5px;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 3px 2px;
+    border-radius: 35%;
+  }
+  
+  .homepage-navbarfooter-css .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .homepage-navbarfooter-css .fa-facebook {
+    background: rgb(82, 109, 168);
+    color: white;
+  }
+  
+  .homepage-navbarfooter-css .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .homepage-navbarfooter-css .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .homepage-navbarfooter-css .fa-instagram {
+    background: #5da1d1;
+    color: white;
+  }
+  .homepage-navbarfooter-css .footernav{
+    text-align: center;
+}
+.homepage-navbarfooter-css hr {
+    color: white
+}
+
+.homepage-navbarfooter-css .bgcolor{
+  background-color: #202021;
+}
+
+.homepage-navbarfooter-css .onHoverNavBarFooter{
+  color:#eeeeee
+}
+
+.homepage-navbarfooter-css .onHoverNavBarFooter:hover{
+  color:#fd7014
+}
+
+.homepage-navbarfooter-css .bgcolor > a{
+  text-decoration: none;
+  /* color: white; */
+}
+
+.homepage-navbarfooter-css .paddingstyle{
+  padding-left: 4.3%;
+}
+
+  @media (max-width:800px){
+    .homepage-navbarfooter-css ul,h3,.footernav,p{
+          text-align: center;
+          padding: 0px;
+      }
+      .homepage-navbarfooter-css h3,p{
+        padding: 0px;
+      }
+          
+  }
+
+  @media (max-width:500px){
+    .homepage-navbarfooter-css p{
+    display: none;
+  }}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Driver Form Module CSS */
+
+.homepage-driverformcomponent-css .bbody{
+  margin-left: 9%;
+  margin-right: 9%;
+  margin-top: 2%;
+}
+.homepage-driverformcomponent-css .backcolor{
+  background-color:rgb(22, 20, 20);
+  padding-left: 25%;
+  padding-bottom: 4%;
+  padding-top: 4%;
+}
+
+.homepage-driverformcomponent-css .buttonstyle{
+  padding-left: 33.5%;
+  background-image: url('/public/jeep2.jpg');
+}
+
+@media only screen and (max-width:800px){
+  .homepage-driverformcomponent-css .buttonstyle{
+      padding-left: 25%;
+  }
+  .homepage-driverformcomponent-css .backcolor{
+      padding-left: 11%;
+  }
+}
+
+
+
+/* Investor Module/Component CSS */
+
+.homepage-investorformcomponent-css .bbody{
+  margin-left: 9%;
+  margin-right: 9%;
+  margin-top: 2%;
+}
+.homepage-investorformcomponent-css .backcolor{
+  background-color:rgb(22, 20, 20);
+  padding-left: 25%;
+  padding-bottom: 4%;
+  padding-top: 4%;
+}
+
+.homepage-investorformcomponent-css .buttonstyle{
+  padding-left: 33.5%;
+  background-image: url('/public/jeep2.jpg');
+}
+
+@media only screen and (max-width:800px){
+  .homepage-investorformcomponent-css .buttonstyle{
+      padding-left: 25%;
+  }
+  .homepage-investorformcomponent-css .backcolor{
+      padding-left: 11%;
+  }
+}
+
+
+
+
+
+
+/* BookingPage Module CSS */
+
+
+/* bookingPage all components CSS  */
+
+.bookingPage-bookingbar-css .flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bookingPage-bookingbar-css .flexitem1{
+  background-color: aquamarine;
+  flex: 1 1 400px;
+}
+
+.bookingPage-bookingbar-css .flexitem2{
+  background-color: rgb(81, 107, 98);
+  flex: 2 2 180px;
+}
+
+.bookingPage-bookingbar-css .flexitem3{
+  background-color: rgb(7, 65, 45);
+  flex: 2 2 180px;
+}
+
+.bookingPage-bookingbar-css .flexitem4{
+  background-color: rgb(170, 197, 188);
+  flex: 2 2 180px;
+}
+
+.bookingPage-bookingbar-css .flexitem5{
+  background-color: rgb(0, 201, 134);
+  flex: 2 2 180px;
+}
+
+.bookingPage-bookingbar-css .flexitem6{
+  background-color: rgb(0, 121, 80);
+  flex: 3 1 100px;
+}
+
+
+
+
+/* vehicaleShowPage.jsx CSS */
+
+.vehicaleShowPage-component-css .grid-container{
+  display: grid;
+  grid-template-columns: 2.7fr 1.4fr;
+  background-color: #202021;
+}
+
+.vehicaleShowPage-component-css .firstgrid{
+  /* background-color: aqua; */
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+.vehicaleShowPage-component-css .secondgrid{
+  grid-row: 1/2;
+  grid-column: 2/3;
+
+  /* background-color: rgb(41, 59, 59); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.vehicaleShowPage-component-css .thirdgrid{
+  background-color: rgb(66, 66, 66);
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.vehicaleShowPage-component-css .fourthgrid{
+  /* background-color: rgb(75, 128, 128); */
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+@media (max-width:1000px){
+  .vehicaleShowPage-component-css .firstgrid{
+      grid-row: 1/2;
+      grid-column: 1/3;
+  }
+  .vehicaleShowPage-component-css .secondgrid{
+      grid-row: 5/6;
+      grid-column: 1/3;
+  
+      /* background-color: rgb(41, 59, 59); */
+  
+      text-align: left;
+  
+  }
+  .vehicaleShowPage-component-css .fourthgrid{
+      grid-column: 1/3;
+  }
+}
+
+/* vehicaleIcons.jsx CSS */
+
+.vehicaleIcon-component-css .icon-flex-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: .5rem;
+  color: white;
+}
+
+.vehicaleIcon-component-css .icon-flex-container .vehicalename{
+  flex: 1;
+  /* background-color: blueviolet; */
+}
+
+.vehicaleIcon-component-css .icon-flex-container .icons{
+  flex: 2;
+  /* background-color: brown; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+/* vehicaleOffers.jsx CSS */
+
+.vehicaleOffers-component-css .vehicaleofferdiv{
+  color: white;
+}
+
+@media (max-width:868px){
+  .vehicaleOffers-component-css .offerclass{
+      text-align: left;
+  }
+}
+
+/* vehicaleOptions.jsx CSS */
+
+.vehicaleOptions-component-css .vehicaleoptions-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  /* background-color: blue; */
+  height: inherit;
+}
+
+/* vehicaleOffersCards.jsx CSS */
+
+.vehicaleOffersCards-component-css .offercard-flex{
+  color: white;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(2 , 1fr);
+  grid-gap: 1rem;
+  text-align: left;
+}
+
+.vehicaleOffersCards-component-css .offercard-flex a{
+  color: white;
+}
+
+.vehicaleOffersCards-component-css .offercard-flex a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.vehicaleOffersCards-component-css .offercard-flex .firstflex{
+/* flex: 1; */
+  background-color: rgb(66, 66, 66);
+
+/* margin-right: .5rem; */
+padding: .7rem;
+}
+
+.vehicaleOffersCards-component-css .offercard-flex .firstflex:focus{
+  background-color: rgb(63, 62, 146);
+}
+
+.vehicaleOffersCards-component-css .offercard-flex .secondflex{
+  /* flex: 1; */
+      background-color: rgb(66, 66, 66);
+
+
+/* margin-right: .5rem; */
+padding: .7rem;
+
+
+
+}
+
+.vehicaleOffersCards-component-css .offercard-flex .thirdflex{
+  /* flex: 1; */
+      background-color: rgb(66, 66, 66);
+
+
+/* margin-right: .5rem; */
+
+padding: .7rem;
+
+}
+
+@media (max-width:1000px){
+  .vehicaleOffersCards-component-css .offercard-flex p{
+      text-align: left;
+  }
+}
+
+
+
+
+
+/* Profile Module */
+/* Profile Accountttab.css */
+
+.profile-accounttb-css .pdataclass{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.profile-accounttb-css .pdataclass .textt{
+/* width: 25vw; */
+align-self: center;
+}
+
+
+/* reservation.css tab */
+
+.profile-reservationtab-css .reserveCards {
+display: flex;
+flex:1;
+margin: 1.5rem;
+flex-wrap: wrap;
+background-color: rgb(112, 112, 110);
+border-radius: 0.5rem;
+color: black;
+padding: 0.5rem;
+
+box-shadow: 0 0 7px 0 rgb(0, 0, 0);
+transition: box-shadow 500ms;
+}
+
+.profile-reservationtab-css .rcard1 {
+flex: 1 1 300px;
+padding: 2rem 0rem 2rem 2rem;
+}
+
+.profile-reservationtab-css .rcard2 {
+/* flex: 2; */
+flex: 2 1 400px;
+}
+
+.profile-reservationtab-css .rcard3 {
+flex: 2 1 400px;
+flex: 2;
+}
+
+.profile-reservationtab-css .rcard3 a {
+color: black;
+}
+
+.profile-reservationtab-css .reserveCards:hover {
+cursor: pointer;
+box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.877);
+}
+
+
+
+
+
+
+/* Driver form css */
+
+/* maindformLayout.css file  */
+
+.maindformLayout .layoutbar{
+display: flex;
+background-color: #202021;
+
+}
+
+.maindformLayout .layoutbar .firstItem{
+flex: 1;
+border-radius: 0%;
+outline: 0em;
+padding-top: .8rem;
+padding-bottom: .8rem;
+}
+
+.maindformLayout .layoutbar .secondItem{
+flex: 1;
+border-radius: 0%;
+outline: 0em;
+padding-top: .8rem;
+padding-bottom: .8rem;
+
+}
+
+.maindformLayout .layoutbar a{
+text-decoration: none;
+color: white;
+}
+
+
+.maindformLayout .layoutbar .active{
+border-bottom: 2px solid blue;
+}
+
+
+/* Booking LayoutStepper folder css  */
+
+/* mainBookingLayout.jsx css */
+
+.mainBookingLayout .layoutbar {
+display: flex;
+background-color: #202021;
+color: #eeeeee;
+padding: .5rem;
+justify-content: center;
+
+}
+
+.mainBookingLayout .layoutbar .firstItem{
+flex: 1;
+border-radius: 0%;
+outline: 0em;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.mainBookingLayout .layoutbar .secondItem{
+flex: 1;
+border-radius: 0%;
+outline: 0em;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+
+.mainBookingLayout .layoutbar .active{
+/* border-bottom: 4px solid rgb(55, 55, 173); */
+color: #fd7014;
+font-weight: bold;
+transition: step-start;
+}
+
+.mainBookingLayout .layoutbar .nonactive{
+/* border-bottom: 4px solid rgb(55, 55, 173); */
+color: #eeeeee;
+font-weight: bold;
+transition: step-start;
+}
+
+.mainBookingLayout .layoutbar .digit{
+background-color: #fd7014;
+padding: 2px 10px;
+border-radius: 45px;
+margin-right: .3rem;
+color: #eeeeee
+}
+
+.mainBookingLayout .layoutbar .nondigit{
+/* background-color: rgb(66, 66, 192); */
+padding: 2px 10px;
+border-radius: 45px;
+margin-right: .3rem;
+color: #eeeeee
+}
+
+
+
+
+
+
+/* All Images Text */
+
+.HomepageAllImagesText .imageTexts{
+text-align: left;
+letter-spacing: 1px;
+line-height: 2rem;
+}
+/* .HomepageAllImagesText .imageTexts h2 {
+font-size: 320%;
+}
+
+.HomepageAllImagesText .imageTexts p {
+font-size: 120%
+} */
+
+@media only screen and (max-width: 800px){
+/* .HomepageAllImagesText .imageTexts{
+    width: 70%; 
+    margin-left: 17%; 
+} */
+}
+
+@media only screen and (max-width:680px){
+/* .HomepageAllImagesText .imageTexts p{
+/* display:none; */
+/* }   
+.HomepageAllImagesText .imageTexts{
+    width: 70%;
+    margin-left: 17%;
+} */
+/* .HomepageAllImagesText .imageTexts h2 {
+    font-size: 230%;
+  }
+
+  .HomepageAllImagesText .imageTexts p {
+      font-size: 100%
+    } */
+}
+
+
+
+
+
+/* productViewPage imgView horizontal Slider CSS Script */
+
+.productViewPage .imgView .HorizontalSlider .flex-container {
+overflow-x: scroll;
+white-space: nowrap;
+overflow: hidden;
+scroll-behavior: smooth;
+color:#eeeeee;
+padding:2.3rem 0;
+/* display: flex;
+justify-content: space-around; */
+
+}
+
+.productViewPage .imgView .HorizontalSlider .flex-container::-webkit-scrollbar{
+  display: none;
+  /* scroll-behavior: smooth; */
+}
+
+/* .productViewPage .imgView .HorizontalSlider .flex-container #move{
+transition: 0.7s ease;
+} */
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox .imageVehicalebox {
+display: inline-block;
+height: 210px;
+  width: 320px;
+  transition: all 0.7s ease;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox .imageDealbox {
+display: inline-block;
+height: 170px;
+  width: 340px;
+  transition: all 0.7s ease;
+  border-radius: .5rem .5rem 0rem 0rem;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox {
+display: inline-block;
+/* border: 1.2px solid black; */
+/* border-radius: .5rem; */
+margin: 0 2.3rem;
+height: 170px;
+  width: 340px;
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox::after{
+  content:'';
+  position: absolute;
+  left: 0;
+  top:100%;
+  width: 100%;
+  height:3%;
+  background-color: #fd7014;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms ease-in;
+
+}
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+.productViewPage .imgView .HorizontalSlider .mainDealsbox .imageDealBoxText{
+  border-radius: 0rem 0rem .5rem .5rem;
+}
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox {
+display: inline-block;
+border-radius: .2rem;
+margin: 0 3rem;
+height: 260px;
+  width: 320px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  
+}
+
+@media (min-width:1500px){
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox{
+  margin: 0 5rem;
+}
+.productViewPage .imgView .HorizontalSlider .mainDealsbox{
+  margin: 0 5rem;
+}
+}
+
+@media (min-width:1700px){
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox{
+  margin: 0 6.5rem;
+}
+.productViewPage .imgView .HorizontalSlider .mainDealsbox{
+  margin: 0 6.5rem;
+}
+}
+
+@media (min-width:1900px){
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox{
+  margin: 0 7.7rem;
+}
+.productViewPage .imgView .HorizontalSlider .mainDealsbox{
+  margin: 0 7.7rem;
+}
+}
+
+@media (max-width:480px){
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox{
+  margin: 0 1.5rem;
+}
+.productViewPage .imgView .HorizontalSlider .mainDealsbox{
+  margin: 0 1.5rem;
+}
+}
+
+@media (max-width:350px){
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox{
+  margin: 0 0.5rem;
+}
+.productViewPage .imgView .HorizontalSlider .mainDealsbox{
+  margin: 0 0.5rem;
+}
+}
+
+.productViewPage .imgView .HorizontalSlider .mainVehicalebox:hover{
+transform: translate(-7px,-7px);
+} 
+
+
+
+
+/* show all vehicales */
+.onHoverVehicaleEffectDiv{
+position: relative;
+/* transition: transform .2s ease; */
+/* z-index: 1; */
+}
+
+.onHoverVehicaleEffectDiv::after{
+content:'';
+position: absolute;
+top: 10%;
+left: 0;
+width:100%;
+height: 1.4%;
+background-color: #fd7014;
+/* z-index: -1; */
+transform: scaleX(0);
+transform-origin: right;
+transition: transform 350ms ease-in;
+}
+
+.onHoverVehicaleEffectDiv:hover::after{
+transform: scaleX(1);
+transform-origin: left;
+}
+
+
+
+
+
+/* productViewPage */
+
+.rightDivPaddingStyle{
+padding-top: 3rem;
+}
+
+.rightDivPaddingStyle .underRightDivPadding{
+padding-top: 5.5rem;
+}
+
+.productviewpageImgSlider{
+height: 33rem;
+}
+
+@media (max-width:800px){
+.rightDivPaddingStyle{
+  padding-top: 0;
+}
+.rightDivPaddingStyle .underRightDivPadding{
+  padding-top: 0;
+}
+
+}
+
+@media (max-width:1000px){
+.productviewpageImgSlider{
+  height: auto;
+}
+.rightDivPaddingStyle{
+  padding-top: 0;
+}
+.rightDivPaddingStyle .underRightDivPadding{
+  padding-top: 0;
+}
+}
+

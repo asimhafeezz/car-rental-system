@@ -84,6 +84,16 @@ export default function Showallvehicles() {
         setvehicaledata(resData)
       })
     }
+    else if (vehicle === 'Jeep') {
+      let search = {
+        application_ID: 150,
+        product_ID: 34
+      }
+      //product item
+      advancedSearch(search).then(resData => {
+        setvehicaledata(resData)
+      })
+    }
     else if (vehicle === 'all') {
       let search = {
         application_ID: 150
@@ -93,6 +103,7 @@ export default function Showallvehicles() {
         setvehicaledata(resData)
       })
     }
+
 },[vehicle])
 
   return (

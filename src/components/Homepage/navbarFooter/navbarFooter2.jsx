@@ -10,7 +10,7 @@ export default ()=> (
     <Container>
   <hr style={{height:'1px', border:'none',color:'#333',backgroundColor:'gray'}} />
   <Row className='pb-3 pt-2 small'>
-      <Col xs={4} md={2}><Link href="/contact"><a className="onHoverNavBarFooter">Contacts</a></Link></Col>
+      <Col xs={4} md={2}><Link to="/contactus"><a className="onHoverNavBarFooter">Contacts</a></Link></Col>
       <Col xs={4} md={2}><Link href=""><a className="onHoverNavBarFooter">Rental Information</a></Link></Col>
       <Col xs={4} md={2}><Link href=""><a className="onHoverNavBarFooter">About</a></Link></Col>
       <Col xs={4} md={2}><Link href=""><a className="onHoverNavBarFooter">T&C</a></Link></Col>

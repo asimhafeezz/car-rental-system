@@ -61,7 +61,7 @@ export default () => {
                     imgDataSet.map(item => {
                         return (<section className="mainDealsbox">
                             <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <section style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
+                            <section className="imageDealBoxText" style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
                             <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.desc.length > 30 ? item.desc.slice(0,30).concat('...') : item.desc}</p>
                             </div></section>
                             </section>)

@@ -24,7 +24,7 @@ export default () => {
             {/* <hr style={{marginBottom:'1rem' , height:'.5rem' , paddingTop:'6rem'}} /> */}
             <div className="pb-4 underRightDivPadding" style={{display:'flex'}}><h3>price:</h3><h2  style={{color:'#f22011' , marginLeft:'.5rem'}}>37$ /-day</h2></div>
             <p style={{letterSpacing:'1px' , fontSize:'.9rem'}}>Available for Quick Booking</p>
-            <Link to="/bookingform" style={{textDecoration:'none'}}><Button color='primary' variant="contained" fullWidth className="rounded-0" size="large">Continue</Button></Link>
+            <Link to="/bookingform" style={{textDecoration:'none'}}><Button color='primary' variant="contained" fullWidth size="large">Continue</Button></Link>
             </div>
         </div>
     )

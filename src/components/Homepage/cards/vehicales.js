@@ -34,11 +34,11 @@ export default () => {
     const [data, setdata] = useState([])
     const [vehicaleImage, setvehicaleImage] = useState('')
 
-    const { advancedSearch } = useProductService()
+    const { advancedsearch } = useProductService()
 
     React.useEffect(() => {
         const search = {application_ID:150}
-        advancedSearch(search).then(resdata => {
+        advancedsearch(search).then(resdata => {
           console.log(resdata)
           setdata(resdata)
         //   console.log("data" , data)
@@ -85,9 +85,9 @@ export default () => {
                                     <img src='/vehicaleImagesStatic/vanpng1.png' className="imageVehicalebox" />
                                     <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
                                     </section> : ""} */}
-                                    {item.product_NAME === "" ?
+                                    {item.product_NAME === "Pickup" ?
                                     <section className="mainVehicalebox" key={item.product_ID}>
-                                    <img src='/vehicaleImagesStatic/pickupspng2.png' className="imageVehicalebox" />
+                                    <img src='/vehicaleImagesStatic/pickuppng2.png' className="imageVehicalebox" />
                                     <h5 style={{textAlign:'center' , padding:'.5rem' , fontWeight:'bold'}}>{item.product_NAME}</h5>
                                     </section> : ""}
                                 

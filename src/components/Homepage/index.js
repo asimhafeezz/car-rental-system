@@ -10,8 +10,8 @@ import Cards from './cards/offerCards'
 // import Bookingbar from '../Booking/bookingbarr'
 import Bookingbar from '../Booking/datePicker/bookingbar'
 
-import Deals from './cards/deals'
-import Vehicales from './cards/vehicales'
+// import Deals from './cards/deals copy'
+// import Vehicales from './cards/vehicales'
 
 export default () => {
 
@@ -31,7 +31,7 @@ export default () => {
             <Bookingbar />
             <FrontImage />
             <section style={{backgroundColor:'#fd7014'}}>
-            <Deals />
+            {/* <Deals /> */}
             {/* <Vehicales /> */}
             </section>
             <section style={{backgroundColor:'#202021'}}>
