@@ -1291,7 +1291,7 @@ content:'';
 position: absolute;
 top: 10%;
 left: 10%;
-width:100%;
+width:80%;
 height: 1.4%;
 background-color: #fd7014;
 border-radius: 1rem;
@@ -1302,7 +1302,7 @@ transition: transform 350ms ease-in;
 }
 
 .onHoverVehicaleEffectDiv:hover::after{
-transform: scaleX(0.8);
+transform: scaleX(1);
 transform-origin: left;
 }
 

@@ -2,11 +2,16 @@ import React from 'react'
 import {Container , Row , Col} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
-import '../../util/main.css'
+//css
+let center = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:'center'
+}
 
 export default ()=> (
     <div className="homepage-navbarfooter-css">
-    <div className='bgcolor pt-5 h-50'>
+    <div className='bgcolor' style={center}>
     <Container>
   <hr style={{height:'1px', border:'none',color:'#333',backgroundColor:'gray'}} />
   <Row className='pb-3 pt-2 small'>
