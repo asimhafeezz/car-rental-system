@@ -1290,10 +1290,11 @@ position: relative;
 content:'';
 position: absolute;
 top: 10%;
-left: 0;
+left: 10%;
 width:100%;
 height: 1.4%;
 background-color: #fd7014;
+border-radius: 1rem;
 /* z-index: -1; */
 transform: scaleX(0);
 transform-origin: right;
@@ -1301,7 +1302,7 @@ transition: transform 350ms ease-in;
 }
 
 .onHoverVehicaleEffectDiv:hover::after{
-transform: scaleX(1);
+transform: scaleX(0.8);
 transform-origin: left;
 }
 
@@ -1343,5 +1344,43 @@ height: 33rem;
 .rightDivPaddingStyle .underRightDivPadding{
   padding-top: 0;
 }
+}
+
+
+
+
+/* icons css */
+
+
+.vehicaleItemIcons {
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  color:#eeeeee;
+  grid-gap: 2rem;
+}
+
+.vehicaleItemIcons .textStyleIcon {
+  color: #eeeeee;
+  margin-top: 2px;
+  text-align: left;
+  font-size:1rem;
+}
+
+@media (max-width: 820px){
+  .vehicaleItemIcons{
+    grid-template-columns: repeat(3 , 1fr);
+  }
+  .vehicaleItemIcons .textStyleIcon {
+    font-size:.8rem;
+  }
+}
+
+@media (max-width: 420px){
+  .vehicaleItemIcons{
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  .vehicaleItemIcons .textStyleIcon {
+    font-size:.6rem;
+  }
 }
 

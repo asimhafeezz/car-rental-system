@@ -4,7 +4,7 @@ export const apiCall = (postData) => {
     // const token = JSON.parse(localStorage.getItem("_application_name_user_detail_")).access_token
     // console.log(token)
     return axios({
-        baseURL: 'https://api.ulearncmis.co.uk:8443/SGW/service',
+        baseURL: 'https://api.cwiztech.com:8443/SGW/service',
         method: 'POST',
         headers: {
             'Authorization': `bearer d1186951-0e76-4d88-83f5-d80fe4055331`

@@ -9,7 +9,10 @@ import CheckIcon from '@material-ui/icons/Check';
 
 // //productItem
 // import useProductItemService from '../../services/productServices/productItemService'
+// import useProductService from '../../../services/productServices/productService'
 
+//filter Vehicles 
+import FilterVehicle from './filter2'
 
 export default function Showallvehicles(props) {
   const [vehicaledata, setvehicaledata] = React.useState([
@@ -25,9 +28,13 @@ export default function Showallvehicles(props) {
     {product_ID:'10' , productitem_NAME:'Hondai' , vpic:'vehicaleImagesStatic/jeep.jpg' , price:'2000$ -/Day'},
   ])
 
+  const [vehicleTypeList, setvehicleTypeList] = React.useState([])
+  const [vehicle, setvehicle] = React.useState('');
+
   // let { setBookingStepValue } = useUtilActions()
   
   // //productitemservice
+  // let { advancedsearch } = useProductService()
   // let { advancedSearch } = useProductItemService()
     
     // React.useEffect(() => {
@@ -46,6 +53,39 @@ export default function Showallvehicles(props) {
     //   })
       
     // },[])
+
+  //   React.useEffect(() => {
+  //     if (vehicle === 'Car') {
+  //       let search = {
+  //         application_ID: 150,
+  //         product_ID: 1
+  //       }
+  //       //product item
+  //       advancedSearch(search).then(resData => {
+  //         setvehicaledata(resData)
+  //       })
+  //     }
+  //     else if (vehicle === 'Jeep') {
+  //       let search = {
+  //         application_ID: 150,
+  //         product_ID: 34
+  //       }
+  //       //product item
+  //       advancedSearch(search).then(resData => {
+  //         setvehicaledata(resData)
+  //       })
+  //     }
+  //     else if (vehicle === 'all') {
+  //       let search = {
+  //         application_ID: 150
+  //       }
+  //       //product item
+  //       advancedSearch(search).then(resData => {
+  //         setvehicaledata(resData)
+  //       })
+  //     }
+  
+  // },[vehicle])
     
     
   let style = {
@@ -66,12 +106,15 @@ export default function Showallvehicles(props) {
           >
             AVAILABLE VEHICALES
           </h3>
+          
+          <FilterVehicle vehicle={vehicle} vehicleTypeList={vehicleTypeList} setvehicle={setvehicle} />
+          
           <div style={{ display: "flex",  flexWrap:'wrap' , justifyContent:'center'}} data-aos="fade-up" data-aos-duration="1500">
             {vehicaledata.map(vitems => {
               return (
                 <div key={vitems.product_ID} style={{ display: "flex",  flexWrap:'wrap' , margin:'1.5rem 1.5rem 2.5rem 1.5rem'}} className="onHoverVehicaleEffectDiv">
                   <Link to="/vehicale" style={{textDecoration:'none' , color:'black'}}>
-                    <div style={{border:'0' , backgroundColor:'#202021' , borderRadius:'.5rem' , boxShadow:  '10px 10px 5px #d86010,-5px -5px 10px #ff8d19'}}>
+                    <div style={{border:'0' , backgroundColor:'#202021' , borderRadius:'.5rem'}}>
                     <div style={{width:'18rem'}} className="vehicleNameDiv" ><h5 style={{padding:'.5rem' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' , margin:'0px' , display: "flex", justifyContent:'center' }}>{vitems.productitem_NAME.length > 15 ? vitems.productitem_NAME.slice(0,15).concat('...') : vitems.productitem_NAME}</h5></div>
                       <img
                       style={{height:'14rem' , width:'17rem' , margin:'.5rem' , borderRadius:'.5rem'}}

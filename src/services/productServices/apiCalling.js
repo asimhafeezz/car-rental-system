@@ -6,7 +6,7 @@ export const apiCall = (postData) => {
     
     
         return axios({
-            baseURL: 'https://api.ulearncmis.co.uk:8443/USERLOGIN/oauth/token?grant_type=password&username=asimhyff&password=Cwiztech123',
+            baseURL: 'https://api.cwiztech.com:8443/USERLOGIN/oauth/token?grant_type=password&username=asimhyff&password=Cwiztech123',
             method: 'POST',
             headers: {
                 'Authorization': `Basic VXNlck1hbmFnbWVudDpzZWNyZXQ=`
@@ -15,7 +15,7 @@ export const apiCall = (postData) => {
         .then(res => {
             console.log('infirstResponse')
             return axios({
-                baseURL: 'https://api.ulearncmis.co.uk:8443/USERLOGIN/login',
+                baseURL: 'https://api.cwiztech.com:8443/USERLOGIN/login',
                 method: 'POST',
                 headers: {
                     'Authorization': `bearer ${res.data.access_token}`
@@ -26,7 +26,7 @@ export const apiCall = (postData) => {
             console.log('insecondResponse')
                 
                 return axios({
-                    baseURL: 'https://api.ulearncmis.co.uk:8443/SGW/service',
+                    baseURL: 'https://api.cwiztech.com:8443/SGW/service',
                     method: 'POST',
                     headers: {
                         'Authorization': `bearer ${res.data.access_token}`

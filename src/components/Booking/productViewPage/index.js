@@ -3,7 +3,7 @@ import React from 'react'
 import ImageSlider from './imgView/imgSlider'
 import HorizontalSlider from './imgView/HorizontalSlider'
 //overview
-import FeatureIcons from './overview/featureIcons'
+import FeatureIcons from './overview/icons'
 //detail
 import MinorDetails from './productMinorDetails/minorDetails'
 
@@ -41,8 +41,9 @@ export default () => {
             <div className="row">
             <section className="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                 <FeatureIcons />
+                {/* <hr style={{height:'.5rem' , color:'white'}} /> */}
                 <Description />
-                <hr style={{height:'.5rem'}} />
+                
             </section>
             
                 </div>
