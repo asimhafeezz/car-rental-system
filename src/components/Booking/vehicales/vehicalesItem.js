@@ -114,7 +114,7 @@ export default function Showallvehicles(props) {
               return (
                 <div key={vitems.product_ID} style={{ display: "flex",  flexWrap:'wrap' , margin:'1.5rem 1.5rem 2.5rem 1.5rem'}} className="onHoverVehicaleEffectDiv">
                   <Link to="/vehicale" style={{textDecoration:'none' , color:'black'}}>
-                    <div style={{border:'0' , backgroundColor:'#202021' , borderRadius:'.5rem'}}>
+                    <div style={{border:'0' , backgroundColor:'#202021' , borderRadius:'.5rem' , boxShadow:  '5px 10px 10px #79360a'}}>
                     <div style={{width:'18rem'}} className="vehicleNameDiv" ><h5 style={{padding:'.5rem' , color:'white' , letterSpacing:'.1rem' , textTransform: 'uppercase' , margin:'0px' , display: "flex", justifyContent:'center' }}>{vitems.productitem_NAME.length > 15 ? vitems.productitem_NAME.slice(0,15).concat('...') : vitems.productitem_NAME}</h5></div>
                       <img
                       style={{height:'14rem' , width:'17rem' , margin:'.5rem' , borderRadius:'.5rem'}}
