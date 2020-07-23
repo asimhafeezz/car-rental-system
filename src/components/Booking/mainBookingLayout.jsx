@@ -8,7 +8,8 @@ import {
 //redux
 import {useSelector} from 'react-redux'
 
-import '../util/main.css'
+//booking bar
+import Bookingbar from './datePicker/bookingbar'
 
 export default ({ children }) => {
 
@@ -18,15 +19,19 @@ export default ({ children }) => {
 
 
     return(
+        <>
+        {bookingStepValue === 'bookingStep1' && <><Bookingbar /></>}
     <div className="mainBookingLayout">
         <div className="layoutbar">
         <Button className={`firstItem ${bookingStepValue === 'bookingStep1'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep1'? `digit` :'nondigit'}`}>1</span><span className={`${bookingStepValue === 'bookingStep1'? `active` :'nonactive'}`}>SELECT VEHICALE</span></Button>
         <Button className={`secondItem ${bookingStepValue === 'bookingStep2'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep2'? `digit` :'nondigit'}`}>2</span><span className={`${bookingStepValue === 'bookingStep2'? `active` :'nonactive'}`}>VEHICALE DETAILS</span></Button>
         <Button className={`secondItem ${bookingStepValue === 'bookingStep3'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep3'? `digit` :'nondigit'}`}>3</span><span className={`${bookingStepValue === 'bookingStep3'? `active` :'nonactive'}`}>BOOKING FORM</span></Button>
         </div>
+        
 
         {children}
 
     </div>
+    </>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 //css
 import '../../util/main.css'
 //material ui
@@ -6,6 +6,8 @@ import { IconButton } from '@material-ui/core'
 //icons
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+
+import axios from 'axios'
 
 let imgDataSet = [
     {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this iasdasdasdasdasdasdasdasdasdasdasdasdasds offer discription'},
@@ -23,6 +25,11 @@ let imgDataSet = [
     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
 ]
 
+
+
+
+
+
 //css
 let arrowButtonStyle = {
     outline: 'none',
@@ -34,6 +41,17 @@ let arrowButtonStyle = {
 }
 
 export default () => {
+
+    let [offers , setOffers] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/alloffer')
+          .then(res => {
+            setOffers(res.data.data)
+            console.log("offers",res.data.data)
+          })
+        .catch(err => alert(err.message))
+    },[])
 
     let moveRight = () => {
         document.getElementById('move').scrollLeft += 350;
@@ -58,11 +76,11 @@ export default () => {
             
             <div className="flex-container" id="move">
                 {
-                    imgDataSet.map(item => {
+                    offers.map(item => {
                         return (<section className="mainDealsbox">
-                            <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <section className="imageDealBoxText" style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
-                            <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.desc.length > 30 ? item.desc.slice(0,30).concat('...') : item.desc}</p>
+                            <img id={item.id} src='D:/code/project/carrentalmanagement/public/offerImages/2020-07-20T14-15-07.613Zjeep_PNG105.png' className="imageDealbox" />
+                            <section className="imageDealBoxText" style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.offerLocation}</h6>
+                            <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.offerDescription.length > 30 ? item.offerDescription.slice(0,30).concat('...') : item.offerDescription}</p>
                             </div></section>
                             </section>)
                     })

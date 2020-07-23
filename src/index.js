@@ -8,15 +8,18 @@ import { LocalizationProvider } from "@material-ui/pickers";
 import DateFnsAdapter from "@material-ui/pickers/adapter/date-fns"
 //redux
 import { Provider } from 'react-redux'
-import store from './store/store'
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from './store/store'
 
 ReactDOM.render(
   <Provider store={store}>
+    <PersistGate persistor={persistor}>
     <LocalizationProvider dateAdapter={DateFnsAdapter}>
   <React.StrictMode>
     <App />
     </React.StrictMode>
     </LocalizationProvider>
+    </PersistGate>
     </Provider>,
   document.getElementById('root')
 );

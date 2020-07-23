@@ -35,13 +35,14 @@ export default function SimpleNativeSelect({vehicleTypeList , vehicle , setvehic
           placeholder="Vehicle Type"
         >
           <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='all'>All Vehicles</option>
-          <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='car'>All Car</option>
-          <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='jepp'>All Jeeps</option>
-          {
+          <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='Car'>Car</option>
+          <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='Jeep'>Jeeps</option>
+          <option style={{backgroundColor:'#202021' ,  outline:'none'}} value='Pickup'>Pickup</option>
+          {/* {
             vehicleTypeList.map(item =>{
               return <option style={{padding:'.5rem 1rem'}} key={item.product_ID} value={item.product_NAME}>{item.product_NAME}</option>
             })
-          }
+          } */}
         </NativeSelect>
       </FormControl>
     </div>

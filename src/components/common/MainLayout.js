@@ -5,9 +5,6 @@ import NavbarFooter2 from '../Homepage/navbarFooter/navbarFooter2'
 //boostrap css
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//mui colors
-import purple from '@material-ui/core/colors/purple'
-
 //Mui dark theme
 import {
     ThemeProvider,

@@ -1,13 +1,17 @@
-import React from 'react'
+import React , {useEffect} from 'react'
 
 
 //icons
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import FlashOnIcon from '@material-ui/icons/FlashOn';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import AcUnitIcon from '@material-ui/icons/AcUnit';
-import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import AcUnitIcon from '@material-ui/icons/AcUnit'
+import SpeakerIcon from '@material-ui/icons/Speaker';
+import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponent';
+import UsbIcon from '@material-ui/icons/Usb';
+import RadioIcon from '@material-ui/icons/Radio';
+import BluetoothIcon from '@material-ui/icons/Bluetooth';
+import AudiotrackIcon from '@material-ui/icons/Audiotrack';
+
+
 
 //css
 let textStyleIconH3 = {
@@ -20,35 +24,32 @@ let center = {
     display: 'flex'
 }
 
-const Icons = () => {
+
+
+const Icons = ({ attributes}) => {
+    
+    useEffect(() => {
+        console.log('icons attributes'  , attributes)
+    },[])
+
     return (
         <div className='p-2'>
             <h3 style={textStyleIconH3}>Overview</h3>
             <div className="container vehicaleItemIcons">
-            <section style={center}>
-                <DriveEtaIcon  className="mr-1" />
-                <h6 className="textStyleIcon">4 Wheel Drive</h6>
-            </section>
-            <section style={center}>
-                <WorkOutlineIcon  className="mr-1" />
-                <h6 className="textStyleIcon">1 SuitCase</h6>
-            </section>
-            <section style={center}>
-                <AcUnitIcon  className="mr-1" />
-                <h6 className="textStyleIcon">Air Conditioning</h6>
-            </section>
-            <section style={center}>
-                <PeopleAltIcon  className="mr-1" />
-                <h6 className="textStyleIcon">4 Seats</h6>
-                </section>
-                <section style={center}>
-                <FlashOnIcon  className="mr-1" />
-                <h6 className="textStyleIcon">Automatic</h6>
-            </section>
-            <section style={center}>
-                <MeetingRoomIcon  className="mr-1" />
-                <h6 className="textStyleIcon">Diesel</h6>
-            </section>
+                {
+                    attributes.map(item => {
+                        return <>
+                            {item.productattribute_ID.productattribute_NAME === '4-Wheel drive' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><DriveEtaIcon className="mr-1" /><h6 className="textStyleIcon">4 Wheel Drive</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'Speakers' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><SpeakerIcon className="mr-1" /><h6 className="textStyleIcon">Speakers</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'AUX Compatible' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><SettingsInputComponentIcon className="mr-1" /><h6 className="textStyleIcon">AUX Compatible</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'USB Compatible' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><UsbIcon className="mr-1" /><h6 className="textStyleIcon">USB Compatible</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'MPS Playback' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><AudiotrackIcon className="mr-1" /><h6 className="textStyleIcon">MP3 Playback</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'Bluetooth' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><BluetoothIcon className="mr-1" /><h6 className="textStyleIcon">Bluetooth</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'FM Radio' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><RadioIcon className="mr-1" /><h6 className="textStyleIcon">FM Radio</h6></section>}
+                            {item.productattribute_ID.productattribute_NAME === 'Air Conditionar' && item.productattributevalue_ID.productattribute_VALUE === 'YES' && <section style={center}><AcUnitIcon className="mr-1" /><h6 className="textStyleIcon">Air Conditionar</h6></section>}
+                        </>
+                    })
+                }
             </div>
         </div>
     )

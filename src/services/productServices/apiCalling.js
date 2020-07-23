@@ -13,7 +13,7 @@ export const apiCall = (postData) => {
             }
         })
         .then(res => {
-            console.log('infirstResponse')
+            console.log('infirstResponse' ,  res.data.access_token)
             return axios({
                 baseURL: 'https://api.cwiztech.com:8443/USERLOGIN/login',
                 method: 'POST',

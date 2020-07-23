@@ -12,6 +12,9 @@ import {Link} from 'react-router-dom'
 //productServiceItem
 import useProductService from '../../../services/productServices/productService'
 
+//spinner
+import Spinner from '../../util/spinner'
+
 let imgDataSet = [
     {id:'1' , imgPath:'/logo512.png' , title:'Cars'},
     {id:'2' , imgPath:'/logo1.png'   , title:'Cars'},
@@ -30,7 +33,19 @@ let arrowButtonStyle = {
     cursor: 'pointer'
 }
 
+let center = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '20rem',
+    flexDirection:'column'
+}
+
 export default () => {
+
+    //spinner toggle
+  const [isLoading , setIsLoading] = useState(true)
+
     const [data, setdata] = useState([])
     const [vehicaleImage, setvehicaleImage] = useState('')
 
@@ -40,6 +55,7 @@ export default () => {
         const search = {application_ID:150}
         advancedsearch(search).then(resdata => {
           console.log(resdata)
+          setIsLoading(false)
           setdata(resdata)
         //   console.log("data" , data)
         })
@@ -59,14 +75,17 @@ export default () => {
                 <h4 style={{display:'flex' , fontSize:'1.2rem' , fontWeight:'bold'}}>DON'T DREAM IT DRIVE IT!</h4>
             
             <div style={{display:'flex' , justifyContent:'flex-end'}}>
-                <arrowButtons style={arrowButtonStyle} onClick={moveVehicaleLeft}><ChevronLeftIcon /></arrowButtons>
-                <arrowButtons style={arrowButtonStyle} onClick={moveVehicaleRight}><ChevronRightIcon /></arrowButtons>
+                {/* <arrowButtons style={arrowButtonStyle} onClick={moveVehicaleLeft}><ChevronLeftIcon /></arrowButtons>
+                <arrowButtons style={arrowButtonStyle} onClick={moveVehicaleRight}><ChevronRightIcon /></arrowButtons> */}
             </div>
             </section>
-        <div className="imgView ">
+
+            {
+                isLoading ? <section style={center}><Spinner /><h5>Loading...</h5></section> : (
+                    <div className="imgView ">
         <div className="HorizontalSlider p-4" style={{display:'flex'}}>
             
-            <div className="flex-container" id="moveVehicale">
+        <div className="flex-container" id="moveVehicale">
                     {
                             data.map(item => {
                             return (<Link to={`/productcar/${item.product_ID}`} style={{textDecoration:'none' , color:'#eeeeee'}}>
@@ -102,6 +121,10 @@ export default () => {
                 </div>
                 
                 </div>
+                )
+            }
+
+        
         </div>
     )
 }

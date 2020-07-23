@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 //css
 import '../../util/main.css'
 //material ui
@@ -7,21 +7,32 @@ import { IconButton } from '@material-ui/core'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-let imgDataSet = [
-    {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this iasdasdasdasdasdasdasdasdasdasdasdasdasds offer discription'},
-    {id:'2' , imgPath:'/vehicaleImagesStatic/cars.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'2' , imgPath:'/vehicaleImagesStatic/jeep.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'3' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'4' , imgPath:'/vehicaleImagesStatic/cars.jpg'   , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-    {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
-]
+// let imgDataSet = [
+//     {id:'1' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this iasdasdasdasdasdasdasdasdasdasdasdasdasds offer discription'},
+//     {id:'2' , imgPath:'/vehicaleImagesStatic/cars.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'2' , imgPath:'/vehicaleImagesStatic/jeep.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'3' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'4' , imgPath:'/vehicaleImagesStatic/cars.jpg'   , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+//     {id:'5' , imgPath:'/vehicaleImagesStatic/jeep3.jpg' , title:'OFFER TITLE' , desc:'this is offer discription'},
+// ]
+
+let [offers , setOffers] = useState([])
+
+// useEffect(() => {
+//     axios.get('http://localhost:5000/alloffer')
+//       .then(res => {
+//         setOffers(res.data.data)
+//         console.log("offers",res.data.data)
+//       })
+//     .catch(err => alert(err.message))
+// },[])
 
 //css
 let arrowButtonStyle = {
@@ -58,11 +69,11 @@ export default () => {
             
             <div className="flex-container" id="move">
                 {
-                    imgDataSet.map(item => {
+                    offers.map(item => {
                         return (<section className="mainDealsbox">
-                            <img id={item.id} src={item.imgPath} className="imageDealbox" />
-                            <section style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.title}</h6>
-                            <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.desc.length > 30 ? item.desc.slice(0,30).concat('...') : item.desc}</p>
+                            <img id={item._id} src={item.offerImagePath} className="imageDealbox" />
+                            <section style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.offerLocation}</h6>
+                            <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.offerDescription.length > 30 ? item.offerDescription.slice(0,30).concat('...') : item.offerDescription}</p>
                             </div></section>
                             </section>)
                     })
