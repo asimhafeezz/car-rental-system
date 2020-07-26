@@ -4,6 +4,7 @@ import authReduer from './authReducer'
 import toggleReducer from './toggleReducer'
 import utilReducer from './utilReducer'
 import productItemReducer from './productItemReducer'
+import bookingReducer from './BookingReducer'
 
 //redux persist reducer
 import { persistReducer } from "redux-persist";
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     auth: authReduer,
     toggle: toggleReducer,
     util: utilReducer,
-    productItem: productItemReducer
+    productItem: productItemReducer,
+    booking: bookingReducer
 })
 
 export default persistReducer(persistConfig, rootReducer);

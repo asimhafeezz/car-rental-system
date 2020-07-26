@@ -9,7 +9,7 @@ import {
 import {useSelector} from 'react-redux'
 
 //booking bar
-import Bookingbar from './datePicker/bookingbar'
+import Bookingbar from './bookingbar'
 
 export default ({ children }) => {
 
