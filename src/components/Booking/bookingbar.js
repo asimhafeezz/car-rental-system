@@ -9,7 +9,8 @@ import {
   InputLabel,
   FormControl,
   Checkbox,
-  FormControlLabel
+  FormControlLabel,
+  FormHelperText
 } from "@material-ui/core";
 
 import { useHistory } from 'react-router-dom'
@@ -40,12 +41,21 @@ export default function MaterialUIPickers() {
     }
   })
 
+  //select validation
+  const [hasError  , setHasError] = useState(false)
+
   const [isSameLocation , setIsSameLocation] = useState(true)
 
   const onFormSubmitHandle = (e) => {
     e.preventDefault()
-    console.log("values", BookingValues)
-    push('/availablevehicales')
+    setHasError(false);
+    if (BookingValues.pickupLocation === null || "") {
+      setHasError(true);
+    }
+    else {
+      console.log("values", BookingValues)
+      push('/availablevehicales') 
+    }
   }
 
   const stations = [
@@ -67,16 +77,16 @@ export default function MaterialUIPickers() {
 
   return (
     <div>
-      <div className="bookingPage-bookingbar-css">
+      <div className="bookingPage-bookingbar-css transitionAllClass" >
           <div className="container-fluid">
           <form onSubmit={onFormSubmitHandle}>
             <div
               className="row"
-              style={{ backgroundColor: "#202020", padding: "2.5%" , transition:'4sec all' }}
+              style={{ backgroundColor: "#202020", padding: "2.5%"}}
             >
               <div className="col-md-4 col-sm-12 col-xs-12 p-1">
-          <FormControl fullWidth>    
-          <InputLabel id="demo-simple-select-label" style={{marginLeft:'1rem'}}>Pickup Location</InputLabel>
+          <FormControl fullWidth error={hasError}>    
+          <InputLabel id="demo-simple-select-label" style={{marginLeft:'1rem', marginBottom:'1rem'}}>Pickup Location</InputLabel>
           <Select
           labelId="demo-simple-select-label"
           value={BookingValues.pickupLocation}
@@ -85,13 +95,15 @@ export default function MaterialUIPickers() {
               type: types.SET_RETURN_LOCATION,
               payload: e.target.value
             })
-            
+            if (BookingValues.pickupLocation === null || "") {
+              setHasError(false);
+            }
             return pickupLocationHandleChange(e)
           }}
           variant="outlined"
           fullWidth
         >
-          <MenuItem value="">
+          <MenuItem value={null}>
             <em>None</em>
           </MenuItem>
           {
@@ -100,12 +112,46 @@ export default function MaterialUIPickers() {
             })
           }
         </Select>
+        {hasError && <FormHelperText>Please Select a Pickup Location!</FormHelperText>}
         </FormControl>
+        
+        
         <FormControlLabel
         style={{color:'#eeeeee'}}
-        control={<Checkbox checked={isSameLocation} onChange={e => setIsSameLocation(e.target.checked)} name="issamelocation" />}
+        control={<Checkbox color="primary" checked={isSameLocation} onChange={e => setIsSameLocation(e.target.checked)} name="issamelocation" />}
         label="Same Return Location"
       />
+      
+      
+      
+      
+      {
+                !isSameLocation &&
+                <FormControl fullWidth>    
+                <InputLabel id="demo-simple-select-label" style={{marginLeft:'1rem' , marginBottom:'1rem'}}>Return Location</InputLabel>
+                <Select
+                labelId="demo-simple-select-label"
+                value={BookingValues.returnLocation}
+                onChange={returnLocationHandleChange}
+                variant="outlined"
+                fullWidth
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                {
+                  stations.map(item => {
+                    return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
+                  })
+                }
+              </Select>
+              </FormControl>
+              }
+      
+      
+      
+      
+      
               </div>
 
       
@@ -147,7 +193,7 @@ export default function MaterialUIPickers() {
         ampmInClock
         showTodayButton
         todayText="now"
-        label="PickUp Date"
+        label="Return Date"
         value={BookingValues.returnTime}
         onChange={handleReturnTime}
       />
@@ -173,31 +219,6 @@ export default function MaterialUIPickers() {
             OFFERS
                 </Button>
               </div>
-              
-              {
-                !isSameLocation &&
-                <div className="col-md-4 col-sm-12 col-xs-12 p-1">
-                <FormControl fullWidth>    
-                <InputLabel id="demo-simple-select-label" style={{marginLeft:'1rem'}}>Return Location</InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                value={BookingValues.returnLocation}
-                onChange={returnLocationHandleChange}
-                variant="outlined"
-                fullWidth
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                {
-                  stations.map(item => {
-                    return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
-                  })
-                }
-              </Select>
-              </FormControl>
-                    </div> 
-              }
             </div>
             </form>
           </div>

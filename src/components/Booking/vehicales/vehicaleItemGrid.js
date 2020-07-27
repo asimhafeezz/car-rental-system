@@ -22,14 +22,14 @@ export default ({ isLoading, vehicaledata, attributes , setvehicalePrice , vehic
     return ( isLoading ? <section style={center}><Spinner /><h5>Loading...</h5></section> : (
         <div style={{ display: "flex",  flexWrap:'wrap' , justifyContent:'center'}} data-aos="fade-up" data-aos-duration="1500">
         {vehicaledata.map(items => {
-        const result_price = attributes.filter(arr => arr.productitem_ID.productitem_ID === items.productitem_ID)
-        // console.log("price" , result_price)
-        const final_price = result_price.filter(arr => arr.productattribute_ID.productattribute_NAME === 'New Price')
-          console.log("final price", final_price[0])
-          price = {
-            ...final_price[0]
-          }
-          console.log("price" , price)
+        // const result_price = attributes.filter(arr => arr.productitem_ID.productitem_ID === items.productitem_ID)
+        // // console.log("price" , result_price)
+        // const final_price = result_price.filter(arr => arr.productattribute_ID.productattribute_NAME === 'New Price')
+        //   console.log("final price", final_price[0])
+        //   price = {
+        //     ...final_price[0]
+        //   }
+        //   console.log("price" , price)
         // setPrice(final_price[0])
         // setvehicalePrice(final_price)
         // setProductItemPrice(result_price.productattribute_ID.productattribute_NAME)

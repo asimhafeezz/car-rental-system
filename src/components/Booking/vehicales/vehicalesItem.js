@@ -58,9 +58,13 @@ export default function Showallvehicles(props) {
     }
 
     uPIAVS.advancedSearch(searchGeneralInfo).then(resData => {
-        setIsLoading(false)
-        setAttributes(resData)
+      setIsLoading(false)
+      setAttributes(resData)
+      const attri = attributes.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_Value === 'lahore')
+      console.log("attri" , attri)
     })
+      
+      
       
     },[])
 
