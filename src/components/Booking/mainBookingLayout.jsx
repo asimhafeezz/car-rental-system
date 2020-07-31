@@ -9,7 +9,7 @@ import {
 import {useSelector} from 'react-redux'
 
 //booking bar
-import Bookingbar from './bookingbar'
+import Bookingbar from './bookingbarVehiclePage'
 
 export default ({ children }) => {
 
@@ -20,7 +20,7 @@ export default ({ children }) => {
 
     return(
         <>
-        {bookingStepValue === 'bookingStep1' && <><Bookingbar /></>}
+        {bookingStepValue === 'bookingStep1' && <><Bookingbar /><hr style={{backgroundColor:'#fd7014' , height:'1px'}} /></>}
     <div className="mainBookingLayout">
         <div className="layoutbar">
         <Button className={`firstItem ${bookingStepValue === 'bookingStep1'? `active` :''}`} disabled><span className={`${bookingStepValue === 'bookingStep1'? `digit` :'nondigit'}`}>1</span><span className={`${bookingStepValue === 'bookingStep1'? `active` :'nonactive'}`}>SELECT VEHICALE</span></Button>

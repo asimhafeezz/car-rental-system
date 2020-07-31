@@ -2,7 +2,12 @@ import * as types from '../actions/types'
 
 const initialState = {
     productItemName: '',
-    productItemDescription: ''
+    productItemID: '',
+    productItemDescription: '',
+    price: '',
+    isNeedDriver: false,
+    isMoneyPaidOnline: false,
+    isMoneyPaidOnlineLineThrough: false
 }
 
 export default (state = initialState, action) => {
@@ -12,6 +17,16 @@ export default (state = initialState, action) => {
                 ...state,
                 productItemName:action.payload.pIN,
                 productItemDescription:action.payload.pID
+            }
+        case types.SET_BOOKING_PRICE_VALUE:
+            return {
+                ...state,
+                price: action.payload
+            }
+        case types.SET_PRODUCT_ITEM_ID:
+            return {
+                ...state,
+                productItemID: action.payload
             }
         default:
             return state

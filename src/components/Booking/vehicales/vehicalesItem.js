@@ -4,7 +4,7 @@ import MainBookingLayout from '../mainBookingLayout'
 
 //redux
 import useUtilActions from '../../../actions/utilActions'
-
+import { useSelector } from 'react-redux'
 // //productItem
 import useProductItemService from '../../../services/productServices/productItemService'
 import useProductService from '../../../services/productServices/productService'
@@ -28,94 +28,97 @@ export default function Showallvehicles(props) {
   const [vehicleTypeList, setvehicleTypeList] = useState([])
   const [vehicle, setvehicle] = useState('');
   const [attributes, setAttributes] = useState([])
+  const [filteredProductItem, setFilteredProductItem] = useState([])
+  const [noItemFound, setnoItemFound] = useState(false)
   
+  //redux booking value
+  const pickupLocation = useSelector(state => state.booking.pickupLocation)
+
   let { setBookingStepValue } = useUtilActions()
   
   //productitemservice
   // let { advancedsearch } = useProductService()
   let { advancedSearch } = useProductItemService()
   let uPIAVS = useProductItemAttributeValueService()
-    
-    React.useEffect(() => {
-      setBookingStepValue("bookingStep1")
-      console.log(props.match.params.productid)
-
-      let search = {
-        product_ID: props.match.params.productid,
-        application_ID: 150
-      }
-
-      //product item
-    advancedSearch(search).then(resData => {
-      setvehicaledata(resData)
-      // setIsLoading(false)
-    })
-      
-      //set values of attributes
-      let searchGeneralInfo = {
-        application_ID: 150,
-        productitem_ID:props.match.params.productid
-    }
-
-    uPIAVS.advancedSearch(searchGeneralInfo).then(resData => {
-      setIsLoading(false)
-      setAttributes(resData)
-      const attri = attributes.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_Value === 'lahore')
-      console.log("attri" , attri)
-    })
-      
-      
-      
-    },[])
+  
+  React.useEffect(() => {
+    setBookingStepValue("bookingStep1")
+  },[])
 
     React.useEffect(() => {
       setIsLoading(true)
+      setnoItemFound(false)
 
-      if (vehicle === 'Car') {
-        let search = {
-          application_ID: 150,
-          product_ID: 1
-        }
-        //product item
-        advancedSearch(search).then(resData => {
-          setvehicaledata(resData)
-          setIsLoading(false)
-        })
+    if (vehicle === 'Car') {
+      let search = {
+        application_ID: 150,
+        product_ID: 1
       }
-      else if (vehicle === 'Jeep') {
-        let search = {
-          application_ID: 150,
-          product_ID: 35
+      //product item
+      uPIAVS.advancedSearch(search).then(resData => {
+        setIsLoading(false)
+        if (resData === undefined || resData.length == 0) {
+          setnoItemFound(true)
         }
-        //product item
-        advancedSearch(search).then(resData => {
-          setvehicaledata(resData)
-          setIsLoading(false)
-        })
-      }
-      else if (vehicle === 'Pickup') {
-        let search = {
-          application_ID: 150,
-          product_ID: 34
+        else {
+          setFilteredProductItem(resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation))
         }
-        //product item
-        advancedSearch(search).then(resData => {
-          setvehicaledata(resData)
-          setIsLoading(false)
-        })
+      })
+    }
+    else if (vehicle === 'Jeep') {
+      let search = {
+        application_ID: 150,
+        product_ID: 35
       }
-      else if (vehicle === 'all') {
-        let search = {
-          application_ID: 150
+      //product item
+      uPIAVS.advancedSearch(search).then(resData => {
+        setIsLoading(false)
+        console.log("jeep data",resData)
+        if (resData === undefined || resData.length == 0) {
+          setnoItemFound(true)
         }
-        //product item
-        advancedSearch(search).then(resData => {
-          setvehicaledata(resData)
-          setIsLoading(false)
-        })
+        else {
+          setFilteredProductItem(resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation))
+        }
+      })
+    }
+    else if (vehicle === 'Pickup') {
+      let search = {
+        application_ID: 150,
+        product_ID: 34
       }
-  
-  },[vehicle])
+      //product item
+      uPIAVS.advancedSearch(search).then(resData => {
+        console.log("jeep data",resData)
+        setIsLoading(false)
+        if (resData === undefined || resData.length == 0) {
+          setnoItemFound(true)
+        }
+        else {
+          setFilteredProductItem(resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation))
+        }
+      })
+    }
+    else if (vehicle === '') {
+      let search = {
+        application_ID: 150
+      }
+      //product item
+      uPIAVS.advancedSearch(search).then(resData => {
+        setIsLoading(false)
+        if (resData.length === 0) {
+          setnoItemFound(true)
+        }
+        else {
+          setFilteredProductItem(resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation))
+        }
+      })
+    }
+      
+      
+      
+    },[pickupLocation , vehicle])
+
     
     
   let style = {
@@ -139,7 +142,7 @@ export default function Showallvehicles(props) {
           
           <FilterVehicle vehicle={vehicle} vehicleTypeList={vehicleTypeList} setvehicle={setvehicle} />
           
-          <VehicaleItemGrid isLoading={isLoading} vehicalePrice={vehicalePrice} setvehicalePrice={setvehicalePrice} attributes={attributes} vehicaledata={vehicaledata} />
+          <VehicaleItemGrid noItemFound={noItemFound} isLoading={isLoading} vehicalePrice={vehicalePrice} setvehicalePrice={setvehicalePrice} attributes={attributes} vehicaledata={filteredProductItem} />
 
           
         </div>

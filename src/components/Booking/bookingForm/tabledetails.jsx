@@ -21,13 +21,13 @@ export default () => {
           <Divider style={{color:'white'}} />
       <div style={{ display: "flex", justifyContent: "space-between" , borderTop:'1px solid white' , paddingTop:'2rem'}}>
         <img
-          src="/jeep4.jpg"
+          src="/logo1.png"
           alt="Reserved Vehicale"
           className="img-fluid"
-          style={{ width: "10rem" }}
+          style={{ width: "20rem" }}
         />
 
-        <div className="pl-5" style={{ textAlign: "left" }}>
+        <div className="" style={{ textAlign: "left" , fontWeight:'bold' , fontSize:'1.2rem'}}>
           <h6>Vehicale Name</h6>
           <p style={{ textAlign: "left" }}>{`Station: ${`Lahore`}`}</p>
           <p
@@ -36,13 +36,14 @@ export default () => {
         </div>
       </div>
       <table>
-        <div className="pt-5 pb-5">
+        <div className="pt-5 pb-5" style={{ textAlign: "left" , fontWeight:'bold' , fontSize:'1.1rem'}}>
           <tr>
             <td style={{ paddingRight: "207px" }}>Rent Fee</td>
             <td>12$/Day</td>
           </tr>
         </div>
-        <div className="pt-5 pb-5">
+        <hr />
+        <div className="pt-5 pb-5" style={{ textAlign: "left" , fontWeight:'bold' , fontSize:'1rem'}}>
           <tr>
             <td>
               <h6>EXTRAS</h6>
@@ -58,7 +59,7 @@ export default () => {
           </tr>
         </div>
 
-        <div className="pt-3 pb-5">
+        <div className="pt-3 pb-5 ml-2" style={{ textAlign: "left" , fontWeight:'bold' , fontSize:'1rem'}}>
           <tr>
             <td>
               <h6>FEES</h6>

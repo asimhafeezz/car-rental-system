@@ -1394,3 +1394,37 @@ height: 33rem;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+
+/* investor image text margin */
+
+.investorTextMargin {
+  margin-bottom : 0
+}
+
+@media (max-width: 780px){
+  .investorTextMargin {
+    margin-bottom : .5rem
+  }
+}
+
+.FinalDataMargin {
+  margin-bottom : 0
+}
+
+@media (max-width: 780px){
+  .FinalDataMargin {
+    margin-top: 2rem;
+  }
+}
+
+.NotLineThroughOnPrice{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.LineThroughOnPrice{
+  text-decoration: line-through;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

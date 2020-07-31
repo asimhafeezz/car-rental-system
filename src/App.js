@@ -9,7 +9,8 @@ import Login from './components/login/login'
 import AvailableVehicales from './components/Booking/vehicales/vehicalesItem'
 import ProductCar from './components/Booking/vehicales/vehicaleView/newVehicles'
 import SpecificVehicaleDetails from './components/Booking/productViewPage/index'
-import VehicaleBookingPage from './components/Booking/bookingForm/finalBF'
+import VehicaleBookingPage from './components/Booking/bookingForm/index'
+import DealPage from './components/Homepage/cards/dealPage/dealPage'
 //contact us form 
 import Contact from './components/contact/contact'
 
@@ -49,6 +50,9 @@ function App() {
        </Switch>
        <Switch>
          <Route exact path="/contactus" component={Contact} />
+       </Switch>
+       <Switch>
+         <Route exact path="/offer/:offerid" component={DealPage} />
        </Switch>
        </MainLayout>
      </Router>

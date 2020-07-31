@@ -155,7 +155,7 @@ export default function MaterialUIPickers() {
               </div>
 
       
-      <div className="col-md-5 col-sm-12 col-xs-12 p-1">
+      <div className="col-md-6 col-sm-12 col-xs-12 p-1">
       <DateRangePicker
       startText="PickUp Date"
       endText="Return Date"
@@ -199,7 +199,7 @@ export default function MaterialUIPickers() {
       />
       </div>
 
-      <div
+      {/* <div
       className="col-md-1 col-sm-12 col-xs-12 p-1"
       // style={{ alignSelf: "center" , marginBottom:'1.3rem'}}
               >
@@ -218,7 +218,7 @@ export default function MaterialUIPickers() {
                 >
             OFFERS
                 </Button>
-              </div>
+              </div> */}
             </div>
             </form>
           </div>

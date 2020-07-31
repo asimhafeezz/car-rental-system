@@ -26,12 +26,12 @@ export default ({ attributes , isLoading}) => {
             <h1 className="pb-4" style={{ letterSpacing: '.3px' }}>{productItemName}</h1>
             {
                     attributes.map(item => {
-                        return <>
+                        return <div key={item.productitemattributevalue_ID}>
                             {item.productattribute_ID.productattribute_NAME === 'Model Year' && <h5 style={{color:'gray' , fontSize:'1rem'}} className="pb-2"><span style={{color:'#eeeeee'}}>Modal:</span> {item.productattributevalue_ID.productattribute_VALUE}</h5>}
                             {item.productattribute_ID.productattribute_NAME === 'Current Mileage' && <h5 style={{color:'gray', fontSize:'1.2rem'}} className="pb-3"><span style={{color:'#eeeeee'}}>Current Mileage:</span> {item.productattribute_VALUE}</h5>}
                             {item.productattribute_ID.productattribute_NAME === 'Color' && <h5 style={{ color: 'gray', fontSize: '1.2rem' }} className="pb-3"><span style={{ color: '#eeeeee' }}>Color:</span> {item.productattribute_VALUE}</h5>}
                             {item.productattribute_ID.productattribute_NAME === 'New Price' && <div className="pb-4 underRightDivPadding" style={{display:'flex'}}><h3>price:</h3><h2  style={{color:'#f22011' , marginLeft:'.5rem'}}>{item.productattribute_VALUE}Rs /-day</h2></div>}
-                            </>
+                            </div>
                 })
             }
             

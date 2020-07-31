@@ -54,116 +54,6 @@ export default () => {
     <MainBookingLayout>
     <div style={{ backgroundColor: "#202021" }}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="container pr-3 pl-3">
-          <h5
-            className="pt-5"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "white"
-            }}
-          >
-            PERSONAL INFORMATION
-          </h5>
-          <hr style={{ backgroundColor: "white" }} />
-          <div className="row pt-5 pb-3 pl-5 pr-5">
-            <section className="col-md-6 col-sm-12 pb-5 allPaddingInput">
-              <Controller
-                placeholder="First Name"
-                fullWidth
-                as={<TextField />}
-                name="firstName"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="firstName"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-
-            <section className="col-md-6 col-sm-12 allPaddingInput pb-5">
-              <Controller
-                fullWidth
-                as={<TextField />}
-                placeholder="Last Name"
-                name="lastName"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="lastName"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-
-            <section className="col-md-6 col-sm-12 allPaddingInput pb-5">
-              <Controller
-                fullWidth
-                as={<TextField />}
-                placeholder="Age"
-                name="age"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="age"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-
-            <section className="col-md-6 col-sm-12 allPaddingInput pb-5">
-              <Controller
-                fullWidth
-                as={<TextField />}
-                placeholder="Father Name"
-                name="fatherName"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="fatherName"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-
-            <section className="col-md-6 col-sm-12 allPaddingInput pb-5">
-              <Controller
-                fullWidth
-                as={<TextField />}
-                placeholder="Age"
-                name="age"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="age"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-
-            <section className="col-md-6 col-sm-12 allPaddingInput pb-5">
-              <Controller
-                fullWidth
-                as={<TextField />}
-                placeholder="Father Name"
-                name="fatherName"
-                control={control}
-                rules={{ required: true }}
-              />
-              <ErrorMessage
-                errors={errors}
-                name="fatherName"
-                as={<ErrorText message="required*" />}
-              />
-            </section>
-          </div>
-        </div>
 
         <div className="container allPaddingInput" style={{ color: "white" }}>
           <h4
@@ -181,14 +71,13 @@ export default () => {
 
           <hr style={{ backgroundColor: "white" }} />
 
-          {/* {isPayLater ? (
+           {isPayLater ? (
             <div>
               <h6>YOUR SELECTION : PAY LATER</h6>
               <p
                 className="small"
                 style={{ textAlign: "left", color: "#5f83de" }}
               >
-                >{" "}
                 <a
                   className="payclass"
                   onClick={() => setisPayLater(!isPayLater)}
@@ -204,7 +93,6 @@ export default () => {
                 className="small"
                 style={{ textAlign: "left", color: "#5f83de" }}
               >
-                >{" "}
                 <a
                   className="payclass"
                   onClick={() => setisPayLater(!isPayLater)}
@@ -213,7 +101,7 @@ export default () => {
                 </a>
               </p>
             </div>
-          )} */}
+          )}
 
           {/* {isPayLater ? (
             ""

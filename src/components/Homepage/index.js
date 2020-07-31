@@ -12,6 +12,7 @@ import Bookingbar from '../Booking/bookingbar'
 
 import Deals from './cards/deals copy'
 import Vehicales from './cards/vehicales'
+import Payment from '../payment/payment'
 
 export default () => {
 
@@ -29,13 +30,14 @@ export default () => {
     return (
         <>
             <Bookingbar />
+            {/* <Payment /> */}
             <FrontImage />
             <section style={{backgroundColor:'#fd7014'}}>
-            {/* <Deals />
-            <Vehicales /> */}
+            <Deals />
+            <Vehicales />
             </section>
             <section style={{backgroundColor:'#202021'}}>
-            <DriverImage />
+            {/* <DriverImage /> */}
             <InvestorImage />
             </section>
             <LocationImage />

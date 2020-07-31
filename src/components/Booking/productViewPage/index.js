@@ -13,6 +13,7 @@ import MainBookingLayout from '../mainBookingLayout'
 
 //redux
 import useUtilActions from '../../../actions/utilActions'
+import useProductItemActions from '../../../actions/productItemActions'
 
 //productitem arrtibute valuse service
 import useProductItemAttributeValueService from '../../../services/productServices/productItemAttributeValue'
@@ -32,6 +33,7 @@ let centerSpinner = {
 
 export default (props) => {
     let { setBookingStepValue } = useUtilActions()
+    let { setProductItemID } = useProductItemActions()
 
     let { advancedSearch } = useProductItemAttributeValueService()
 
@@ -40,7 +42,8 @@ export default (props) => {
     
     React.useEffect(() => {
         setBookingStepValue("bookingStep2")
-
+        setProductItemID(props.match.params.vehicaleid)
+        
         //set values of attributes
         let searchGeneralInfo = {
             application_ID: 150,

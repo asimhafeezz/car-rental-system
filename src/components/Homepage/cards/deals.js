@@ -24,15 +24,19 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // ]
 
 let [offers , setOffers] = useState([])
+let [isLoading, setIsLoading] = useState(true)
 
-// useEffect(() => {
-//     axios.get('http://localhost:5000/alloffer')
-//       .then(res => {
-//         setOffers(res.data.data)
-//         console.log("offers",res.data.data)
-//       })
-//     .catch(err => alert(err.message))
-// },[])
+useEffect(() => {
+    setIsLoading(true)
+
+    axios.get('http://localhost:5000/alloffer')
+      .then(res => {
+        setOffers(res.data.data)
+        setIsLoading(false)
+        console.log("offers",res.data.data)
+      })
+    .catch(err => alert(err.message))
+},[])
 
 //css
 let arrowButtonStyle = {
@@ -53,7 +57,7 @@ export default () => {
     let moveLeft = () => {
         document.getElementById('move').scrollLeft -= 350;
     }
-    return (
+    return isLoading ? <h1>Loading</h1> : (
         <div className="productViewPage p-4 pt-5">
             <section style={{display:'grid' , gridTemplateColumns:'1fr 1fr'}}>
             
@@ -73,7 +77,7 @@ export default () => {
                         return (<section className="mainDealsbox">
                             <img id={item._id} src={item.offerImagePath} className="imageDealbox" />
                             <section style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.offerLocation}</h6>
-                            <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.offerDescription.length > 30 ? item.offerDescription.slice(0,30).concat('...') : item.offerDescription}</p>
+                            {/* <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.offerDescription.length > 30 ? item.offerDescription.slice(0,30).concat('...') : item.offerDescription}</p> */}
                             </div></section>
                             </section>)
                     })

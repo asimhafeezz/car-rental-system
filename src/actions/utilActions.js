@@ -12,6 +12,8 @@ export default () => {
         })
     } 
 
+    
+
     return {
         setBookingStepValue
     }

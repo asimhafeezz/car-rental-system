@@ -12,12 +12,10 @@ const VehicaleItemCard = ({ productitemid, productitem_DESC , productitem_NAME, 
   
   let { setProductItemValues } = useProuctItemActions()
 
-  useEffect(() => {
-    console.log("vehicalePrice" , vehicalePrice)
-  },[])
 
   let onClickHandler = () => {
-    setProductItemValues(productitem_NAME , productitem_DESC)
+    setProductItemValues(productitem_NAME, productitem_DESC)
+    console.log("productdesc",productitem_DESC)
   }
 
     return(
@@ -33,7 +31,7 @@ const VehicaleItemCard = ({ productitemid, productitem_DESC , productitem_NAME, 
                       />
                       <div style={{padding:'.4rem .1rem' , color:'white' , textAlign:'center'}}>
                         <p style={{marginTop:'rem'}}><CheckIcon className="mr-2 pb-1" />incl. unlimited miles</p>
-                        {/* <h6 style={{fontSize:'1.2rem' , margin:'0 .3rem' , letterSpacing:'rem'}}>{}</h6> */}
+                        <h6 style={{fontSize:'1.2rem' , margin:'0 .3rem' , letterSpacing:'rem'}}>{vehicalePrice}</h6>
                       </div>
                     </div>
                     </Link>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default () => (
   
-  <Link to="home">
+  <Link to="/home">
     <img
       src="/logo1.png"
       alt="logo"

@@ -11,8 +11,7 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 150,
-    outline: 'none',
-    marginBottom:'2rem'
+    outline: 'none'
   }
 }));
 
@@ -27,19 +26,17 @@ export default function SimpleNativeSelect({vehicleTypeList , vehicle , setvehic
     <div style={{display:'flex' , justifyContent:'center' , alignItems:'center' , padding:'0rem .5rem 1.2rem .5rem' , marginBottom:'1rem'}}>
         <h6 style={{marginTop:'1rem' , marginRight:'1rem'}}><FilterListIcon style={{marginRight:'.2rem' , fontSize:'2rem'}} />FILTER BY:</h6>
       <FormControl className={classes.formControl}>
-      <InputLabel id="demo-simple-select-label111">Vehicle Type</InputLabel>
+      {/* <InputLabel id="demo-simple-select-label111">Vehicle Type</InputLabel> */}
         <Select
           labelId="demo-simple-select-label111"
           value={vehicle}
+          displayEmpty
           onChange={handleChange}
           className={classes.selectEmpty}
           inputProps={{ 'aria-label': 'Without label' }}
           placeholder="Vehicle Type"
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value='all'>All Vehicles</MenuItem>
+          <MenuItem value=''><em>All Vehicles</em></MenuItem>
           <MenuItem value='Car'>Car</MenuItem>
           <MenuItem value='Jeep'>Jeeps</MenuItem>
           <MenuItem value='Pickup'>Pickup</MenuItem>
