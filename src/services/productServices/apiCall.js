@@ -7,7 +7,7 @@ export const apiCall = (postData) => {
         baseURL: 'https://api.cwiztech.com:8443/SGW/service',
         method: 'POST',
         headers: {
-            'Authorization': `bearer 6fcaad14-281b-474d-bcab-182c8e853eec`
+            'Authorization': `bearer 88d2df76-bb61-43d9-ab53-96e15020a3f9`
         },
         data: postData
     })

@@ -5,6 +5,12 @@ import axios from 'axios'
 //icons
 import PublishIcon from '@material-ui/icons/Publish';
 
+//redux
+import { useDispatch } from 'react-redux'
+import * as types from '../../../../actions/types'
+
+//react router
+import { useHistory } from 'react-router-dom'
 //css
 let center = {
     display: 'flex',
@@ -15,8 +21,11 @@ let center = {
 
 export default (props) => {
 
-    let [offer , setOffer] = useState({})
+    let dispatch = useDispatch()
+    let { push } = useHistory()
 
+    let [offer, setOffer] = useState({})
+    
     useEffect(() => {
         axios.get(`http://localhost:5000/offerfindbyid/${props.match.params.offerid}`)
           .then(res => {
@@ -24,7 +33,15 @@ export default (props) => {
             console.log("offers",res.data.data)
           })
         .catch(err => alert(err.message))
-    },[])
+    }, [])
+    
+    let onClickHandler = () => {
+        dispatch({
+            type: types.SET_PICKUP_LOCATION,
+            payload: offer.offerLocation
+        })
+        push('/availablevehicales')
+    }
 
     return (
         <div className="container" style={{textAlign:'center'}}>
@@ -33,7 +50,7 @@ export default (props) => {
             <section className="col-md-12 col-sm-12 mt-5"><section style={center} ><img src={`http://localhost:5000/${offer.offerImagePath}`} alt="picture" className="img-fluid" style={{height:'60vh'}} /></section></section>
             <section className="col-md-12 col-sm-12 ml-3 mb-2 mt-4"><h1  style={{...center, color:'#eeeeee'}}>{offer.offerName}</h1></section>
             <section className="col-md-12 col-sm-12 m-3"><p style={{ ...center, color: '#eeeeee' }}><>{offer.offerDescription}</></p></section>
-            <section className="col-md-12 col-sm-12 mt-5 mb-5 ml-3" ><section  style={center}><Button color='primary' variant="contained" size="large">Get the Offer <PublishIcon style={{marginLeft:'.5rem' , marginBottom:'.5rem'}} /></Button></section></section>
+            <section className="col-md-12 col-sm-12 mt-5 mb-5 ml-3" ><section  style={center}><Button color='primary' variant="contained" size="large" onClick={onClickHandler}>Get the Offer <PublishIcon style={{marginLeft:'.5rem' , marginBottom:'.5rem'}} /></Button></section></section>
             
             
         </div>

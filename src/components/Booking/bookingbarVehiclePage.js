@@ -15,7 +15,7 @@ import {
 
 import { useHistory } from 'react-router-dom'
 
-
+import axios from 'axios'
 
 //redux 
 import {useSelector , useDispatch} from 'react-redux'
@@ -58,22 +58,20 @@ export default function MaterialUIPickers() {
     }
   }
 
-  const stations = [
-    { title: "Hunza Hill Station" },
-    { title: "Naran Station" },
-    { title: "Abbottabad Station" },
-    { title: "Fairy Meadows" },
-    { title: "Kalam ( Swat)" },
-    { title: "Chitral" },
-    { title: "Naltar Valley" }
-  ];
+  const [stations , setstations] = useState([])
 
   React.useEffect(() => {
     dispatch({
       type: types.SET_RETURN_LOCATION,
       payload: BookingValues.pickupLocation
     })
-  },[isSameLocation])
+  }, [isSameLocation])
+  
+  React.useEffect(() => {
+    axios.get('http://localhost:3333/allfranchises').then(res => {
+      setstations(res.data.data)
+    })
+  },[])
 
   return (
     <div>
@@ -103,12 +101,9 @@ export default function MaterialUIPickers() {
           variant="outlined"
           fullWidth
         >
-          <MenuItem value={null}>
-            <em>None</em>
-          </MenuItem>
           {
             stations.map(item => {
-              return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
+              return <MenuItem key={item._id} value={item.franchiseName}>{item.franchiseName}</MenuItem>
             })
           }
         </Select>
@@ -136,12 +131,9 @@ export default function MaterialUIPickers() {
                 variant="outlined"
                 fullWidth
               >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
                 {
                   stations.map(item => {
-                    return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
+                    return <MenuItem key={item._id} value={item.franchiseName}>{item.franchiseName}</MenuItem>
                   })
                 }
               </Select>

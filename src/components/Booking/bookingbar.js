@@ -14,13 +14,14 @@ import {
 } from "@material-ui/core";
 
 import { useHistory } from 'react-router-dom'
-
-
+import axios from 'axios'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 //redux 
 import {useSelector , useDispatch} from 'react-redux'
 import useBookingActions from '../../actions/BookingActions'
 import * as types from '../../actions/types'
+
 
 export default function MaterialUIPickers() {
 
@@ -45,6 +46,7 @@ export default function MaterialUIPickers() {
   const [hasError  , setHasError] = useState(false)
 
   const [isSameLocation , setIsSameLocation] = useState(true)
+  const [isLoading , setisLoading] = useState(true)
 
   const onFormSubmitHandle = (e) => {
     e.preventDefault()
@@ -58,15 +60,7 @@ export default function MaterialUIPickers() {
     }
   }
 
-  const stations = [
-    { title: "Hunza Hill Station" },
-    { title: "Naran Station" },
-    { title: "Abbottabad Station" },
-    { title: "Fairy Meadows" },
-    { title: "Kalam ( Swat)" },
-    { title: "Chitral" },
-    { title: "Naltar Valley" }
-  ];
+  const [stations , setstations] = useState([])
 
   React.useEffect(() => {
     dispatch({
@@ -74,6 +68,12 @@ export default function MaterialUIPickers() {
       payload: BookingValues.pickupLocation
     })
   },[isSameLocation])
+
+  React.useEffect(() => {
+    axios.get('http://localhost:3333/allfranchises').then(res => {
+      setstations(res.data.data)
+    })
+  },[])
 
   return (
     <div>
@@ -108,7 +108,7 @@ export default function MaterialUIPickers() {
           </MenuItem>
           {
             stations.map(item => {
-              return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
+              return <MenuItem key={item._id} value={item.franchiseName}>{item.franchiseName}</MenuItem>
             })
           }
         </Select>
@@ -141,7 +141,7 @@ export default function MaterialUIPickers() {
                 </MenuItem>
                 {
                   stations.map(item => {
-                    return <MenuItem key={item.title} value={item.title}>{item.title}</MenuItem>
+                    return <MenuItem key={item._id} value={item.franchiseName}>{item.franchiseName}</MenuItem>
                   })
                 }
               </Select>
