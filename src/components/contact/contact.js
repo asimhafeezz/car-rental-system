@@ -43,7 +43,7 @@ export default () => {
         message: message
     }
 
-    axios.post('http://localhost:5000/send', emailData)
+    axios.post('http://localhost:3331/send', emailData)
         .then(() => {
             setSpin(false)
             setIsEmailSent(true)

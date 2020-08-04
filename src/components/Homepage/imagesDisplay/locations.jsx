@@ -1,11 +1,13 @@
 import React from 'react'
 import {Button} from '@material-ui/core'
 
-import '../../util/main.css'
+import {Link} from 'react-router-dom'
 
 
 
-export default ()=>(
+export default () => {
+
+    return (
     <div className="homepage-locationimage-css" data-aos="fade-up" data-aos-duration="1500">
     <div className='b'>
     <div className="boxx">
@@ -16,9 +18,9 @@ export default ()=>(
         </div> */}
                 
         <div className="locationsbtn">
-        <Button className='rounded-0' size="large" variant="contained" color="primary" >FIND US</Button>
+        <Link to="/franchises"><Button className='rounded-0' size="large" variant="contained" color="primary" >FIND US</Button></Link>
             </div>
     </div>
     </div>
     </div>
-)
+)}

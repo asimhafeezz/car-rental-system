@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux'
 import useProductItemActions from '../../../actions/productItemActions'
 import useBookingActions from '../../../actions/BookingActions'
 
+import {useHistory} from 'react-router-dom'
 
 export default () => {
 
@@ -49,6 +50,22 @@ export default () => {
     let { advancedSearch } = useProductItemAttributeValueService()
 
     let { setPrice } = useProductItemActions()
+
+    let {push} = useHistory()
+
+    let onClickButtonHandler = () => {
+
+
+        push('/thankyou')
+
+        // let Data = {
+        //     name: productItemValues.productItemName,
+        //     pickUpLocation: bookingValues.pickupStation,
+        //     returnLocation: bookingValues.returnStation,
+        //     pickUpDate: bookingValues.dates[0],
+        //     returnDate: bookingValues.dates[1],
+        // }
+    }
 
 
     let checkBoxHandleChange = e => {
@@ -172,6 +189,7 @@ export default () => {
                     setisPayLater(!isPayLater) 
                     setisLoading(true)
                     setisMoneyPaidOnline(false)
+                    // setisMoneyPaidOnlineLineThrough(false)
                     setTimeout(() => {
                         setisLoading(false)
                     },1200)
@@ -183,13 +201,13 @@ export default () => {
               {!isLoading && <Payment isMoneyPaidOnline={isMoneyPaidOnline} setisMoneyPaidOnline={setisMoneyPaidOnline} setisMoneyPaidOnlineLineThrough={setisMoneyPaidOnlineLineThrough} />}
             </div>
           )}
-          <FormControlLabel
+          {/* <FormControlLabel
         style={{color:'#eeeeee' , marginTop:'1.5rem'}}
         control={<Checkbox color="primary" checked={isNeedDriver} onChange={checkBoxHandleChange} name="isNeedDriver" />}
         label="A Driver Costs 400 Rs / Day"
-      />
+      /> */}
                     </section>        
-    <hr style={{backgroundColor:'#fd7014' , height:'1px'}} />
+    <hr style={{backgroundColor:'#fd7014' , height:'1px' , marginTop:'2.8rem'}} />
 
 
     
@@ -214,7 +232,7 @@ export default () => {
             <h6>{` Renting for `}<span style={{color: '#fd7014'}}>{totalDays}</span>{` Days`}</h6>
             <p className="mb-3 mt-2" style={{color:'#eeeeee' ,textAlign:'left' , fontSize:'1.2rem' }}>Total Cost : <span style={{color: '#fd7014' , marginLeft:'1rem' , marginTop:'.5rem'}}>{isLoadingPrice ? <CircularProgress size="1.5rem" /> : <> <span style={{fontSize:'.8rem'}}>{`${firstPrice} * ${totalDays} `}{isNeedDriver ? <>{` + ${driverCost} * ${totalDays}`}</> : '' }</span><span className={isMoneyPaidOnlineLineThrough ? 'LineThroughOnPrice' : 'NotLineThroughOnPrice'}>{` = ${productItemValues.productItemPrice}`}</span> Rs</>}</span></p>
     <p className="small" style={{marginTop:'-1rem' , textAlign:'left'}}>Tax included</p>
-    <Button disabled={isMoneyPaidOnline} style={{color:'#eeeeee' , marginBottom:'1rem'}} fullWidth color="primary" variant="contained">BOOK NOW</Button>
+    <Button disabled={isMoneyPaidOnline} style={{color:'#eeeeee' , marginBottom:'1rem'}} fullWidth color="primary" variant="contained" onClick={onClickButtonHandler}>BOOK NOW</Button>
     </section>
             </Col>
             </Row>

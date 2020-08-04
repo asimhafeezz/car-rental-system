@@ -11,7 +11,7 @@ export default () => {
         console.log(savedBasictoken);
         if (object.application_CODE && savedBasictoken) {
             //api call
-            axios.post('https://api.ulearncmis.co.uk:8443/USERLOGIN/login',
+            axios.post('https://api.cwiztech.com:8443/USERLOGIN/login',
                 { application_CODE: object.application_CODE },
                 {
                     headers: {
@@ -20,6 +20,7 @@ export default () => {
                 }
             )
                 .then(res => {
+                    console.log('inside profle api')
                     let data = res.data
                     if (data) {
                         console.log("Console data login api");

@@ -11,6 +11,10 @@ import ProductCar from './components/Booking/vehicales/vehicaleView/newVehicles'
 import SpecificVehicaleDetails from './components/Booking/productViewPage/index'
 import VehicaleBookingPage from './components/Booking/bookingForm/index'
 import DealPage from './components/Homepage/cards/dealPage/dealPage'
+import Reservations from './components/login/profile/profileLayout'
+import Franchises from './components/franchises/index'
+import ThankYou from './components/Booking/thankyouPage'
+
 //contact us form 
 import Contact from './components/contact/contact'
 
@@ -53,6 +57,15 @@ function App() {
        </Switch>
        <Switch>
          <Route exact path="/offer/:offerid" component={DealPage} />
+       </Switch>
+       <Switch>
+         <Route exact path="/reservations" component={Reservations} />
+       </Switch>
+       <Switch>
+         <Route exact path="/franchises" component={Franchises} />
+       </Switch>
+       <Switch>
+         <Route exact path="/thankyou" component={ThankYou} />
        </Switch>
        </MainLayout>
      </Router>

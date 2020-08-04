@@ -1428,3 +1428,66 @@ height: 33rem;
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+
+
+/* profile layout and reservations css */
+
+.growRightpanelProfileLayout {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  height: 100%;
+  background-color:#202021;
+}
+
+@media (max-width:768px){
+  .hideLeftPanelProfileLayout{
+      display:none;
+  }
+  .growRightpanelProfileLayout{
+      grid-template-columns: 1fr;
+      width:100%;
+      height: 100%
+  }
+}
+
+.profile-reservationtab-css .reserveCards {
+  display: flex;
+  flex:1;
+  margin: 1.5rem;
+  flex-wrap: wrap;
+  background-color: rgb(112, 112, 110);
+  border-radius: 0.5rem;
+  color: black;
+  padding: 0.5rem;
+  text-align: left;
+
+  box-shadow: 0 0 7px 0 rgb(0, 0, 0);
+  transition: box-shadow 500ms;
+}
+
+.profile-reservationtab-css .rcard1 {
+  flex: 1 1 300px;
+}
+
+.profile-reservationtab-css .rcard2 {
+  /* flex: 2; */
+  flex: 2 1 200px;
+  text-align: left;
+  
+}
+
+.profile-reservationtab-css .rcard3 {
+  flex: 2 1 200px;
+  flex: 2;
+  text-align: left;
+}
+
+.profile-reservationtab-css .rcard3 a {
+  color: black;
+}
+
+.profile-reservationtab-css .reserveCards:hover {
+  cursor: pointer;
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.877);
+}

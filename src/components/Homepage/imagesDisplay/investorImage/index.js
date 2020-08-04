@@ -1,7 +1,14 @@
 import React from 'react'
 import InvestorImageText from '../../ImagesText/allImagesText'
-import {Button} from '@material-ui/core'
+import { Button } from '@material-ui/core'
+
+import DialougeBox from './dialougebox'
+import EmailDBox from './emailDbox'
+
 export default () => {
+
+    const [open, setOpen] = React.useState(false);
+    const [ isEmailSent , setIsEmailSent ] = React.useState(false);
 
     let text = {
         InvestorTitle: 'Be an Investor',
@@ -9,9 +16,12 @@ export default () => {
         }
 
     return (
+        <div className="container-fluid">
+        <EmailDBox  isEmailSent={isEmailSent} setIsEmailSent={setIsEmailSent}  />
         <div className="container-fluid row mt-5 mb-5 investorTextMargin" style={{paddingRight:'0px'}}>
-            <section className="col-sm-12 col-md-6 investorTextMargin" style={{ margin: 'auto' }}><InvestorImageText title={text.InvestorTitle} para={text.InvestorText} /><Button className='rounded-0' size="large" variant="contained" color="primary" style={{color:'#eeeeee'}} >Become a Host</Button></section>
+            <section className="col-sm-12 col-md-6 investorTextMargin" style={{ margin: 'auto' }}><InvestorImageText title={text.InvestorTitle} para={text.InvestorText} /><DialougeBox open={open} setOpen={setOpen} setIsEmailSent={setIsEmailSent} /></section>
             <section className=" col-sm-12 col-md-6"><img className="img-fluid" src="/vehicaleImagesStatic/investorImage.jpg" alt="Driver Image" /></section>
+        </div>
         </div>
     )
 }
