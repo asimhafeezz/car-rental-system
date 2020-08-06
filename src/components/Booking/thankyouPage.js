@@ -5,11 +5,27 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import PaymentIcon from '@material-ui/icons/Payment';
 import EmojiTransportationIcon from '@material-ui/icons/EmojiTransportation';
 
-const thankyouPage = () => {
+//redux
+import { useSelector } from 'react-redux'
+
+export default () => {
+
+    let bookingStatus = useSelector(state => state.booking.bookingStatus)
+    let [text , settext] = React.useState('')
+
+    React.useEffect(() => {
+        if (bookingStatus === 'updating') {
+            settext('You Reservation has been Updated!')
+        }
+        else {
+            settext('Thank You For The Reservation')
+        }
+    },[])
+
     return (
         <div className="container" style={{color:'#eeeeee'}}>
             <div className="m-5">
-            <h2 style={{textAlign:'left'}} className="mt-4">Thank You For The Reservation</h2>
+            <h2 style={{textAlign:'left' , color:'#fd7014'}} className="mt-4">{text}</h2>
             <hr style={{ backgroundColor: '#fd7014', height: '1px' }} />
             <h5 style={{textAlign:'left'}} className="mt-5 mb-4">Your Next Steps</h5>
             <p style={{textAlign:'left'}} className="mt-3"><VpnKeyIcon style={{marginRight:'1rem'}} />Get your keys at the counter *</p>
@@ -23,4 +39,3 @@ const thankyouPage = () => {
     )
 }
 
-export default thankyouPage

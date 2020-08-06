@@ -39,7 +39,7 @@ export default () => {
     useEffect(() => {
         setIsLoading(true)
 
-        axios.get('http://localhost:5000/alloffer')
+        axios.get('http://localhost:3332/alloffer')
           .then(res => {
             setOffers(res.data.data)
             setTimeout(() => {
@@ -75,7 +75,7 @@ export default () => {
                 {
                     offers.map(item => {
                         return (<Link to={`/offer/${item._id}`} style={{textDecoration: 'none' , color:'#eeeeee'}}><section className="mainDealsbox" key={item._id}>
-                            <img src={`http://localhost:5000/${item.offerImagePath}`} className="imageDealbox" />
+                            <img src={`http://localhost:3332/${item.offerImagePath}`} className="imageDealbox" />
                             <section className="imageDealBoxText" style={{display:'flex' , padding:'.5rem' , backgroundColor:'#202021'}}><img alt="percent" src="/vehicaleImagesStatic/per.png" style={{height:'3rem' , marginRight:'1rem' , marginLeft:'.2rem'}} /><div><h6 style={{textAlign:'left'}}>{item.offerName}</h6>
                             <p style={{ textAlign: 'left' , fontWeight:'' , letterSpacing:'1' }}>{item.offerDescription.length > 30 ? item.offerDescription.slice(0,30).concat('...') : item.offerDescription}</p>
                             </div></section>

@@ -11,9 +11,14 @@ import ProductCar from './components/Booking/vehicales/vehicaleView/newVehicles'
 import SpecificVehicaleDetails from './components/Booking/productViewPage/index'
 import VehicaleBookingPage from './components/Booking/bookingForm/index'
 import DealPage from './components/Homepage/cards/dealPage/dealPage'
-import Reservations from './components/login/profile/profileLayout'
+import Bookings from './components/login/profile/profileLayout'
 import Franchises from './components/franchises/index'
 import ThankYou from './components/Booking/thankyouPage'
+
+//update
+import UpdateVehicles from './components/Booking/vehicales Update/vehicalesItem'
+import UpdateBookingForm from './components/Booking/bookingFormUpdate'
+import UpdateProductItemViewPage from './components/Booking/productViewPageUpdate'
 
 //contact us form 
 import Contact from './components/contact/contact'
@@ -59,13 +64,22 @@ function App() {
          <Route exact path="/offer/:offerid" component={DealPage} />
        </Switch>
        <Switch>
-         <Route exact path="/reservations" component={Reservations} />
+         <Route exact path="/bookings" component={Bookings} />
        </Switch>
        <Switch>
          <Route exact path="/franchises" component={Franchises} />
        </Switch>
        <Switch>
          <Route exact path="/thankyou" component={ThankYou} />
+       </Switch>
+       <Switch>
+         <Route exact path="/updatevehicles" component={UpdateVehicles} />
+       </Switch>
+       <Switch>
+         <Route exact path="/updateBookingForm" component={UpdateBookingForm} />
+       </Switch>
+       <Switch>
+         <Route exact path="/updateVehicleShow/:vehicaleid" component={UpdateProductItemViewPage} />
        </Switch>
        </MainLayout>
      </Router>

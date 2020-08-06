@@ -969,7 +969,7 @@ transition: box-shadow 500ms;
 
 .profile-reservationtab-css .rcard1 {
 flex: 1 1 300px;
-padding: 2rem 0rem 2rem 2rem;
+padding: 0.4rem 0rem 2rem 2rem;
 }
 
 .profile-reservationtab-css .rcard2 {
@@ -1306,6 +1306,12 @@ transform: scaleX(1);
 transform-origin: left;
 }
 
+ /* sam but on selected vehicle */
+ .onHoverVehicaleEffectDivOnMatchingID{
+  background-color: #eeeeee;
+  color:'#202021'
+  }
+  
 
 
 

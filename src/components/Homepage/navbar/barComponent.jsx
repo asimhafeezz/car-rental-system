@@ -7,7 +7,7 @@ import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
+import SpeakerNotesIcon from '@material-ui/icons/SpeakerNotes';
 //router
 import { useHistory } from 'react-router-dom'
 
@@ -62,7 +62,12 @@ const MenuAppBar = (props) => {
       setAnchorEl(null);
       ViewProffile()
     };
-    
+  
+    const handleCloseBookings = () => {
+      setAnchorEl(null);
+      history.push(`/bookings`)
+    };
+  
     const handleCloseLogOut = () => {
       props.setSpinnerOn()
       
@@ -113,6 +118,7 @@ const MenuAppBar = (props) => {
                 // style={{backgroundColor:'#eeeeee'}}
               >{props.spinner}
                 <MenuItem  style={{padding:'.5rem 1rem' , color:'black'}} onClick={handleCloseProfile}><PersonOutlineIcon style={{marginRight:'.7rem'}} />My Account</MenuItem>
+                <MenuItem  style={{padding:'.5rem 1rem' , color:'black'}} onClick={handleCloseBookings}><SpeakerNotesIcon style={{marginRight:'.7rem'}} />My Bookings</MenuItem>
           <MenuItem onClick={handleCloseLogOut} style={{ padding: '.5rem 1rem' , color:'black' }}>
           {props.spinner && <CircularProgress style={{marginRight:'.7rem' , color:'#fd7014'}} size='1.2rem' />}
                       <ExitToAppIcon style={{marginRight:'.7rem' , color:'black'}} />Logout

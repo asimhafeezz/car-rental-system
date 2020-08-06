@@ -20,7 +20,7 @@ export default () => {
         <EmailDBox  isEmailSent={isEmailSent} setIsEmailSent={setIsEmailSent}  />
         <div className="container-fluid row mt-5 mb-5 investorTextMargin" style={{paddingRight:'0px'}}>
             <section className="col-sm-12 col-md-6 investorTextMargin" style={{ margin: 'auto' }}><InvestorImageText title={text.InvestorTitle} para={text.InvestorText} /><DialougeBox open={open} setOpen={setOpen} setIsEmailSent={setIsEmailSent} /></section>
-            <section className=" col-sm-12 col-md-6"><img className="img-fluid" src="/vehicaleImagesStatic/investorImage.jpg" alt="Driver Image" /></section>
+            <section className=" col-sm-12 col-md-6"><img className="img-fluid" style={{borderRadius:'.5rem'}} src="/vehicaleImagesStatic/investorImage.jpg" alt="Driver Image" /></section>
         </div>
         </div>
     )

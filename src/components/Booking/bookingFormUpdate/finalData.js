@@ -45,8 +45,8 @@ export default () => {
         return {
         productItemID : state.productItem.productItemID,
         productItemPrice : state.productItem.price,
-        productItemName: state.productItem.productItemName,
-        productImagePath:state.productItem.productImagePath
+          productItemName: state.productItem.productItemName,
+          productImagePath:state.productItem.productImagePath
         }
     })
     
@@ -55,12 +55,13 @@ export default () => {
         dates : state.booking.bDates,
         pickupStation: state.booking.pickupLocation,
         returnStation: state.booking.returnLocation,
-        is_payment_online : state.booking.is_payment_online
+        is_payment_online : state.booking.is_payment_online,
+        reservationNo : state.booking.reservationNo
     }})
 
     let { advancedSearch } = useProductItemAttributeValueService()
 
-    let { setPrice } = useProductItemActions()
+    let { setPrice , setProductItemImagePath} = useProductItemActions()
     let { setis_payment_online_false } = useBookingActions()
 
     
@@ -85,13 +86,14 @@ export default () => {
             end_date: bookingValues.dates[1].length === 24 ? bookingValues.dates[1].slice(0,10) : GetDateFormate(bookingValues.dates[1]),
             total_price: productItemValues.productItemPrice,
             is_payment_online: bookingValues.is_payment_online,
+            id:bookingValues.reservationNo,
             vehicle_imagePath: productItemValues.productImagePath,
             vehicle_name: productItemValues.productItemName
         }
 
         console.log("Data" , Data)
 
-        axios.post(`http://127.0.0.1:5000/updateBooking?user_id=${Data.user_id}&vehicle_id=${Data.vehicle_id}&start_date=${Data.start_date}&end_date=${Data.end_date}&total_price=${Data.total_price}&pickup_location=${Data.pickup_location}&return_location=${Data.return_location}&is_payment_online=${Data.is_payment_online}&vehicle_imagePath=${Data.vehicle_imagePath}&vehicle_name=${Data.vehicle_name}`)
+        axios.post(`http://127.0.0.1:5000/updateBooking?id=${Data.id}&user_id=${Data.user_id}&vehicle_id=${Data.vehicle_id}&start_date=${Data.start_date}&end_date=${Data.end_date}&total_price=${Data.total_price}&pickup_location=${Data.pickup_location}&return_location=${Data.return_location}&is_payment_online=${Data.is_payment_online}&vehicle_imagePath=${Data.vehicle_imagePath}&vehicle_name=${Data.vehicle_name}`)
             .then((res) => {
                 setTimeout(() => {
                     push('/thankyou')
@@ -168,7 +170,7 @@ export default () => {
         <Col sm={12} md={6}>
         <section className="fluid-container">
         <img
-          src="/vehicaleImagesStatic/jeep.jpg"
+          src={`http://localhost:3335/${productItemValues.productImagePath}`}
           alt="Reserved Vehicale"
           className="img-fluid"
           style={{borderRadius:'5px'}}

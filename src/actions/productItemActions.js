@@ -6,14 +6,23 @@ export default () => {
     let dispatch = useDispatch()
 
     //getting the product Attributes value
-    let setProductItemValues = (productItemName, productItemDesc) => {
+    let setProductItemValues = (productItemName, productItemDesc , productItemImagePath) => {
         
         dispatch({
             type: types.SET_PRODUCT_ITEM_ATTRIBUTES_VALUES,
             payload: {
                 pIN: productItemName,
-                pID: productItemDesc
+                pID: productItemDesc,
+                pIIPATH: productItemImagePath
             }
+        })
+    } 
+
+    let setProductItemImagePath = (data) => {
+        
+        dispatch({
+            type: types.SET_PRODUCT_ITEM_IMAGE_PATH,
+            payload: data
         })
     } 
 
@@ -52,5 +61,5 @@ export default () => {
         })
     }
 
-    return {setProductItemValues , setPrice , setProductItemID , setisDriverNeed , setisMoneyPaidOnline , setisMoneyPaidOnlineLineThrough}
+    return {setProductItemImagePath ,setProductItemValues , setPrice , setProductItemID , setisDriverNeed , setisMoneyPaidOnline , setisMoneyPaidOnlineLineThrough}
 }

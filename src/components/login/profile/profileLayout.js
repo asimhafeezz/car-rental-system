@@ -5,7 +5,7 @@ import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 
 //profile components
-import Reservation from './reservation'
+import Reservation from './reservations'
 
 //History
 import { useHistory } from 'react-router-dom'
@@ -44,10 +44,10 @@ const Profile =  () => {
     let { push } = useHistory()
 
     return (
-        <div className="growRightpanelProfileLayout">
+        <div className="growRightpanelProfileLayout" style={{backgroundColor:'#202021' , minHeight:'80vh'}}>
             <div className="hideLeftPanelProfileLayout">
             <section  style={section1Style}>
-                <Button style={reservationTab ? {...buttonStyle , color: 'rgb(67, 90, 217)'}: buttonStyle } onClick={()=> setreservationTab(true)}>
+                <Button style={reservationTab ? {...buttonStyle , color: '#fd7014'}: buttonStyle } onClick={()=> setreservationTab(true)}>
                     <div><FeaturedPlayListIcon />
                     <h6 style={h6InsideButtonStyle}>RESERVATIONS</h6></div>
                 </Button>

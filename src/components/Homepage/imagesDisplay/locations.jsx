@@ -18,7 +18,7 @@ export default () => {
         </div> */}
                 
         <div className="locationsbtn">
-        <Link to="/franchises"><Button className='rounded-0' size="large" variant="contained" color="primary" >FIND US</Button></Link>
+        <Link to="/franchises" style={{textDecoration:'none' , outline:'none'}}><Button size="large" variant="contained" color="primary" >FIND US</Button></Link>
             </div>
     </div>
     </div>

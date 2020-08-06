@@ -30,7 +30,7 @@ export default function MaterialUIPickers() {
   //react router dom
   const {push} = useHistory()
   //bookingactions
-  const { handleDateChange , handlePickupTime , handleReturnTime , returnLocationHandleChange , pickupLocationHandleChange} = useBookingActions()
+  const {setIsSameLocationValue , setis_payment_online_false , setBookingStatus , handleDateChange , handlePickupTime , handleReturnTime , returnLocationHandleChange , pickupLocationHandleChange , setIsSameLocation} = useBookingActions()
   //redux values
   const BookingValues = useSelector(state => {
     return {
@@ -39,13 +39,14 @@ export default function MaterialUIPickers() {
     dates: state.booking.bDates,
     pickupTime: state.booking.pickupTime,
     returnTime: state.booking.returnTime,
+    isSameLocation: state.booking.isSameLocation
     }
   })
 
   //select validation
   const [hasError  , setHasError] = useState(false)
 
-  const [isSameLocation , setIsSameLocation] = useState(true)
+  // const [isSameLocation , setIsSameLocation] = useState(true)
   const [isLoading , setisLoading] = useState(true)
 
   const onFormSubmitHandle = (e) => {
@@ -56,6 +57,8 @@ export default function MaterialUIPickers() {
     }
     else {
       console.log("values", BookingValues)
+      setBookingStatus('')
+      setis_payment_online_false()
       push('/availablevehicales') 
     }
   }
@@ -63,13 +66,17 @@ export default function MaterialUIPickers() {
   const [stations , setstations] = useState([])
 
   React.useEffect(() => {
-    dispatch({
-      type: types.SET_RETURN_LOCATION,
-      payload: BookingValues.pickupLocation
-    })
-  },[isSameLocation])
+    if (BookingValues.isSameLocation) {
+      dispatch({
+        type: types.SET_RETURN_LOCATION,
+        payload: BookingValues.pickupLocation
+      })
+    }
+    
+  },[BookingValues.isSameLocation])
 
   React.useEffect(() => {
+    setIsSameLocationValue(true)
     axios.get('http://localhost:3333/allfranchises').then(res => {
       setstations(res.data.data)
     })
@@ -91,7 +98,7 @@ export default function MaterialUIPickers() {
           labelId="demo-simple-select-label"
           value={BookingValues.pickupLocation}
           onChange={e => {
-            isSameLocation && dispatch({
+            BookingValues.isSameLocation && dispatch({
               type: types.SET_RETURN_LOCATION,
               payload: e.target.value
             })
@@ -118,7 +125,7 @@ export default function MaterialUIPickers() {
         
         <FormControlLabel
         style={{color:'#eeeeee'}}
-        control={<Checkbox color="primary" checked={isSameLocation} onChange={e => setIsSameLocation(e.target.checked)} name="issamelocation" />}
+        control={<Checkbox color="primary" checked={BookingValues.isSameLocation} onChange={e => setIsSameLocation(e)} name="issamelocation" />}
         label="Same Return Location"
       />
       
@@ -126,7 +133,7 @@ export default function MaterialUIPickers() {
       
       
       {
-                !isSameLocation &&
+                !BookingValues.isSameLocation &&
                 <FormControl fullWidth>    
                 <InputLabel id="demo-simple-select-label" style={{marginLeft:'1rem' , marginBottom:'1rem'}}>Return Location</InputLabel>
                 <Select
@@ -180,7 +187,7 @@ export default function MaterialUIPickers() {
         ampmInClock
         showTodayButton
         todayText="now"
-        label="PickUp Date"
+        label="PickUp Time"
         value={BookingValues.pickupTime}
         onChange={handlePickupTime}
       />
@@ -193,7 +200,7 @@ export default function MaterialUIPickers() {
         ampmInClock
         showTodayButton
         todayText="now"
-        label="Return Date"
+        label="Return Time"
         value={BookingValues.returnTime}
         onChange={handleReturnTime}
       />
