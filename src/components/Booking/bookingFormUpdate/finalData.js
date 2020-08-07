@@ -35,9 +35,12 @@ export default () => {
     const [isMoneyPaidOnline, setisMoneyPaidOnline] = useState(false)
     const [isMoneyPaidOnlineLineThrough, setisMoneyPaidOnlineLineThrough] = useState(false)
     const [isLoadingPrice, setIsLoadingPrice] = useState(true)
+    const [isOldPriceGreater, setIsOldPriceGreater] = useState(null)
     const [totalDays, setTotalDays] = useState(0)
     const [firstPrice, setFirstPrice] = useState(0)
     const [driverCost, setDriverCost] = useState(400)
+    const [updatedPrice, setupdatedPrice] = useState(0)
+    const [actualPrice, setactualPrice] = useState(0)
 
     
 
@@ -46,7 +49,8 @@ export default () => {
         productItemID : state.productItem.productItemID,
         productItemPrice : state.productItem.price,
           productItemName: state.productItem.productItemName,
-          productImagePath:state.productItem.productImagePath
+          productImagePath: state.productItem.productImagePath,
+          productItemOldPrice: state.productItem.oldPrice
         }
     })
     
@@ -152,7 +156,24 @@ export default () => {
             setIsLoadingPrice(false)
             let data = resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'New Price')
             setFirstPrice(data[0].productattribute_VALUE)
-            setPrice(data[0].productattribute_VALUE * days)
+            // setPrice(data[0].productattribute_VALUE * days)
+          setactualPrice(data[0].productattribute_VALUE * days)
+          var aPrice = data[0].productattribute_VALUE * days
+          if (productItemValues.productItemOldPrice > aPrice) {
+            // var oldprice = parseInt(productItemValues.productItemOldPrice)
+            let p = parseInt(productItemValues.productItemOldPrice) - parseInt(aPrice)
+            console.log('priceppp Older Greater' , p , productItemValues.productItemOldPrice , aPrice)
+            setPrice(p)
+            setIsOldPriceGreater(true)
+          }
+          else {
+            // var oldprice = parseInt(productItemValues.productItemOldPrice)
+            let pr = parseInt(aPrice) - parseInt(productItemValues.productItemOldPrice)
+            console.log('priceppp new greater' , pr)
+            
+            setPrice(pr)
+            setIsOldPriceGreater(false)
+          }
         })
     }, [])
 
@@ -266,10 +287,14 @@ export default () => {
             </Col>
             <Col sm={12} md={6}>
             <section className="" style={{margin:'5.5rem' , color:'#eeeeee'}}>
+              {
+                isOldPriceGreater ? <h6>{` Old Cost = `}<span style={{color: '#fd7014'}}>{productItemValues.productItemOldPrice}</span>{` - New Cost = `}<span style={{color: '#fd7014'}}>{actualPrice}</span></h6> : <h6>{` New Cost = `}<span style={{color: '#fd7014'}}>{actualPrice}</span>{` - Old Cost = `}<span style={{color: '#fd7014'}}>{productItemValues.productItemOldPrice}</span></h6>
+              }
             <h6>{` Renting for `}<span style={{color: '#fd7014'}}>{totalDays}</span>{` Days`}</h6>
+            
             <p className="mb-3 mt-2" style={{color:'#eeeeee' ,textAlign:'left' , fontSize:'1.2rem' }}>Total Cost : <span style={{color: '#fd7014' , marginLeft:'1rem' , marginTop:'.5rem'}}>{isLoadingPrice ? <CircularProgress size="1.5rem" /> : <> <span style={{fontSize:'.8rem'}}>{`${firstPrice} * ${totalDays} `}{isNeedDriver ? <>{` + ${driverCost} * ${totalDays}`}</> : '' }</span><span>{` = `}</span><span className={bookingValues.is_payment_online ? 'LineThroughOnPrice' : 'NotLineThroughOnPrice'}>{`${productItemValues.productItemPrice}`}</span> Rs</>}</span></p>
     <p className="small" style={{marginTop:'-1rem' , textAlign:'left'}}>Tax included</p>
-    <Button disabled={isMoneyPaidOnline} style={{color:'#eeeeee' , marginBottom:'1rem'}} fullWidth color="primary" variant="contained" onClick={onClickButtonHandler}>{isBooking ? <CircularProgress style={{color:'#eeeeee'}} size="1.6rem" /> : "BOOK NOW"}</Button>
+    <Button disabled={isMoneyPaidOnline} style={{color:'#eeeeee' , marginBottom:'1rem'}} fullWidth color="primary" variant="contained" onClick={onClickButtonHandler}>{isBooking ? <CircularProgress style={{color:'#eeeeee'}} size="1.6rem" /> : "UPDATE NOW"}</Button>
     </section>
             </Col>
             </Row>

@@ -43,7 +43,8 @@ let UpcommingCardComponent = ({
   setBookingStatus,
   setis_payment_online_false,
   setis_payment_online_true,
-  setReservationNo
+  setReservationNo,
+  setoldPrice
 }) => {
   
   let onDeleteButtonClick = (id) => {
@@ -66,6 +67,7 @@ let UpcommingCardComponent = ({
         datearr.push(date1)
         handleDateChange(datearr)
         setReservationNo(reservationNo)
+        setoldPrice(total_price)
         setPickupLocation(res.data.data[0].pickup_location)
         setReturnLocation(res.data.data[0].return_location)
         setProductItemID(res.data.data[0].vehicle_id)
@@ -155,10 +157,14 @@ export default (props) => {
 
   let {setReservationNo , setBookingStatus , setis_payment_online_false , setis_payment_online_true , setPickupLocation , setReturnLocation , handleDateChange, setIsSameLocationValue } = useBookingActions()
   
-  let { setProductItemID } = useProductItemActions()
+  let { setoldPrice , setProductItemID } = useProductItemActions()
 
   React.useEffect(() => {
     setdatee(datee.getTime())
+  },[])
+
+  React.useEffect(() => {
+    
     setisLoading(true)
 
   axios.get(`http://127.0.0.1:5000/getBooking?user_id=249`)
@@ -186,7 +192,7 @@ export default (props) => {
             
             bookings.map(item => {
               return datee > Date.parse(item.end_date) ? <section style={centerSpinner}><h5>No Current Booking Found!</h5></section> :(
-               <UpcommingCardComponent key={item.id}setReservationNo={setReservationNo} setBookingStatus={setBookingStatus} setis_payment_online_false={setis_payment_online_false} setis_payment_online_true={setis_payment_online_true} push={push} setProductItemID={setProductItemID} setIsSameLocationValue={setIsSameLocationValue} setPickupLocation={setPickupLocation} setReturnLocation={setReturnLocation} handleDateChange={handleDateChange} isDeleted={isDeleted} setisDeleted={setisDeleted} reservationNo={item.id} vehicleID={item.vehicle_id} is_payment_online={item.is_payment_online} pickup_location={item.pickup_location} return_location={item.return_location} start_date={item.start_date} end_date={item.end_date} total_price={item.total_price} vehicleData={vehicleData} vehicle_name={item.vehicle_name} vehicle_imagePath={item.vehicle_imagePath} />)
+               <UpcommingCardComponent key={item.id} setoldPrice={setoldPrice} setReservationNo={setReservationNo} setBookingStatus={setBookingStatus} setis_payment_online_false={setis_payment_online_false} setis_payment_online_true={setis_payment_online_true} push={push} setProductItemID={setProductItemID} setIsSameLocationValue={setIsSameLocationValue} setPickupLocation={setPickupLocation} setReturnLocation={setReturnLocation} handleDateChange={handleDateChange} isDeleted={isDeleted} setisDeleted={setisDeleted} reservationNo={item.id} vehicleID={item.vehicle_id} is_payment_online={item.is_payment_online} pickup_location={item.pickup_location} return_location={item.return_location} start_date={item.start_date} end_date={item.end_date} total_price={item.total_price} vehicleData={vehicleData} vehicle_name={item.vehicle_name} vehicle_imagePath={item.vehicle_imagePath} />)
             })))
           }
         </div>

@@ -8,7 +8,8 @@ const initialState = {
     isNeedDriver: false,
     isMoneyPaidOnline: false,
     isMoneyPaidOnlineLineThrough: false,
-    productImagePath:''
+    productImagePath: '',
+    oldPrice:''
 }
 
 export default (state = initialState, action) => {
@@ -34,6 +35,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 productImagePath: action.payload
+            }
+        case types.SET_PRODUCT_ITEM_OLD_PRICE:
+            return {
+                ...state,
+                oldPrice: action.payload
             }
         default:
             return state

@@ -40,7 +40,7 @@ export default () => {
         })
     }
 
-    const setisDriverNeed = (bool) => {
+    const setisDriverNeed = bool => {
         dispatch({
             type: types.SET_DRIVER,
             payload: bool
@@ -61,5 +61,12 @@ export default () => {
         })
     }
 
-    return {setProductItemImagePath ,setProductItemValues , setPrice , setProductItemID , setisDriverNeed , setisMoneyPaidOnline , setisMoneyPaidOnlineLineThrough}
+    const setoldPrice = data => {
+        dispatch({
+            type: types.SET_PRODUCT_ITEM_OLD_PRICE,
+            payload: data
+        })
+    }
+
+    return {setoldPrice , setProductItemImagePath ,setProductItemValues , setPrice , setProductItemID , setisDriverNeed , setisMoneyPaidOnline , setisMoneyPaidOnlineLineThrough}
 }

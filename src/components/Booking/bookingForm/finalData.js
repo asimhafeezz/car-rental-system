@@ -91,8 +91,9 @@ export default () => {
 
         console.log("Data" , Data)
 
-        axios.post(`http://127.0.0.1:5000/updateBooking?user_id=${Data.user_id}&vehicle_id=${Data.vehicle_id}&start_date=${Data.start_date}&end_date=${Data.end_date}&total_price=${Data.total_price}&pickup_location=${Data.pickup_location}&return_location=${Data.return_location}&is_payment_online=${Data.is_payment_online}&vehicle_imagePath=${Data.vehicle_imagePath}&vehicle_name=${Data.vehicle_name}`)
+        axios.post(`http://127.0.0.1:5000/addBooking?user_id=${Data.user_id}&vehicle_id=${Data.vehicle_id}&start_date=${Data.start_date}&end_date=${Data.end_date}&total_price=${Data.total_price}&pickup_location=${Data.pickup_location}&return_location=${Data.return_location}&is_payment_online=${Data.is_payment_online}&vehicle_imagePath=${Data.vehicle_imagePath}&vehicle_name=${Data.vehicle_name}`)
             .then((res) => {
+                console.log(res.data)
                 setTimeout(() => {
                     push('/thankyou')
                 },2000)
