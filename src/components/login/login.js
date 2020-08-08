@@ -10,7 +10,7 @@ const LoginComponent = (props) => {
     React.useEffect(() => {
         let params = queryString.parse(props.location.search)
         props.onLoginComponent(params)
-        history.push('https://safar.vercel.app/')
+        history.push('/home')
     }, [])
     
     return (
