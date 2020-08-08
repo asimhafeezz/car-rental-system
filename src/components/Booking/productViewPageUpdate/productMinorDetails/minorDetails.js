@@ -6,7 +6,9 @@ import '../../../util/main.css'
 import { useHistory } from 'react-router-dom'
 
 //redux
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
+
+
 
 //css
 let baseStyle = {
@@ -20,6 +22,7 @@ export default ({ attributes, isLoading }) => {
     let { push } = useHistory()
 
     let productItemName = useSelector(state => state.productItem.productItemName)
+    let isAuth = useSelector(state => state.auth.isAuthenticated)
     
 
     let bookingStatus = useSelector(state => state.booking.bookingStatus)

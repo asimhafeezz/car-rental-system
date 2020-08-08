@@ -110,7 +110,10 @@ export default function Showallvehicles(props) {
           setnoItemFound(true)
         }
         else {
-          setFilteredProductItem(resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation))
+          let vehicles = resData.filter(arr => arr.productattribute_ID.productattribute_NAME === 'Current Location' && arr.productattribute_VALUE === pickupLocation)
+          setFilteredProductItem(vehicles)
+          let arr = []
+          console.log("vehicle id's" , vehicles)
         }
       })
     }

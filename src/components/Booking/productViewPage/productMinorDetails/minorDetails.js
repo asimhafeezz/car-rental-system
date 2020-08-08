@@ -8,6 +8,8 @@ import { useHistory } from 'react-router-dom'
 //redux
 import {useSelector} from 'react-redux'
 
+import { loginUser } from '../../../../actions/authActions'
+
 //css
 let baseStyle = {
     display: 'flex',
@@ -20,7 +22,7 @@ export default ({ attributes, isLoading }) => {
     let { push } = useHistory()
 
     let productItemName = useSelector(state => state.productItem.productItemName)
-    
+    let isAuth = useSelector(state => state.auth.isAuthenticated)
 
     let bookingStatus = useSelector(state => state.booking.bookingStatus)
 
@@ -29,7 +31,8 @@ export default ({ attributes, isLoading }) => {
         // if (bookingStatus === 'updating') {
             
         // }
-        push('/bookingform')
+        isAuth ? 
+        push('/bookingform') : loginUser()
 
     }
 

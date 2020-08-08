@@ -84,7 +84,7 @@ export default () => {
             start_date: bookingValues.dates[0].length === 24 ? bookingValues.dates[0].slice(0,10) : GetDateFormate(bookingValues.dates[0]),
             end_date: bookingValues.dates[1].length === 24 ? bookingValues.dates[1].slice(0,10) : GetDateFormate(bookingValues.dates[1]),
             total_price: productItemValues.productItemPrice,
-            is_payment_online: bookingValues.is_payment_online,
+            is_payment_online: bookingValues.is_payment_online ? bookingValues.is_payment_online : '',
             vehicle_imagePath: productItemValues.productImagePath,
             vehicle_name: productItemValues.productItemName
         }

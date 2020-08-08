@@ -16,7 +16,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 //redux
 import {useSelector} from 'react-redux'
 
-import "../../util/main.css";
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +33,8 @@ export default function ControlledExpansionPanels() {
   //global State Context
   // let store = React.useContext(globalStateContext)
   // let utilStore = React.useContext(UtilContext)
+
+  let { push } = useHistory()
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -74,9 +76,6 @@ export default function ControlledExpansionPanels() {
                       <a>Reservations</a>
                     </li>
                     <li>
-                      <a>Driver Panel</a>
-                    </li>
-                    <li>
                       <a>Investor Panel</a>
                     </li>
                   </div>
@@ -84,9 +83,6 @@ export default function ControlledExpansionPanels() {
                   <div>
                     <li>
                       <a>Log In or Register</a>
-                    </li>
-                    <li>
-                      <a>Be a Driver</a>
                     </li>
                     <li>
                       <a>Be an Investor</a>
@@ -168,17 +164,9 @@ export default function ControlledExpansionPanels() {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <ul className="allAtag" style={{ listStyleType: "none" }}>
+              
               <li>
-                <a>Log In or Register</a>
-              </li>
-              <li>
-                <a>Change Reservation</a>
-              </li>
-              <li>
-                <a>Cancel Reservation</a>
-              </li>
-              <li>
-                <a>Request Invoice</a>
+                <a onClick={()=> push('/contactus')}>For Support Contact us</a>
               </li>
             </ul>
           </ExpansionPanelDetails>
