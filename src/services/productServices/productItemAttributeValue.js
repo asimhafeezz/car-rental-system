@@ -1,4 +1,4 @@
-import { apiCall } from './apiCall'
+import { apiCall } from './apiCalling'
 import { setting } from '../../settings'
 
 export default () => {
