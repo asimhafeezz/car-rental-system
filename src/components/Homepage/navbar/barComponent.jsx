@@ -70,9 +70,8 @@ const MenuAppBar = (props) => {
   
     const handleCloseLogOut = () => {
       props.setSpinnerOn()
-      
+      props.loggedOutUser()
       setTimeout(() => {
-        props.loggedOutUser()
         setAnchorEl(null);
         history.push('/home')
         props.setSpinnerOff()
