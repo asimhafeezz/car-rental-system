@@ -23,6 +23,8 @@ import useBookingActions from '../../actions/BookingActions'
 import * as types from '../../actions/types'
 
 
+
+
 export default function MaterialUIPickers() {
 
   //redux
@@ -45,6 +47,7 @@ export default function MaterialUIPickers() {
 
   //select validation
   const [hasError  , setHasError] = useState(false)
+  const [WindowWidthIsLess  , setWindowWidthIsLess] = useState(true)
 
   // const [isSameLocation , setIsSameLocation] = useState(true)
   const [isLoading , setisLoading] = useState(true)
@@ -81,6 +84,11 @@ export default function MaterialUIPickers() {
       setstations(res.data.data)
     })
   },[])
+
+  // React.useEffect(()=>{
+  //   console.log('window inner width'  , window.innerWidth)
+  //   window.innerWidth >= 720 ? setWindowWidthIsLess(true) : setWindowWidthIsLess(false) 
+  // },[window.innerWidth])
 
   return (
     <div>
@@ -172,7 +180,7 @@ export default function MaterialUIPickers() {
       onChange={date => handleDateChange(date)}
       renderInput={(startProps, endProps) => (
         <>
-          <TextField variant="standard" className="mr-1" fullWidth {...startProps} />
+          <TextField variant="standard" className={WindowWidthIsLess ? 'mr-1' : null} fullWidth {...startProps} />
           
           <TextField variant="standard" fullWidth {...endProps} />
         </>
